@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "com.stocksapp-mergeDebugResources-20:/values-v23/values-v23.xml",
+            "outputFile": "com.stocksapp-mergeDebugResources-23:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/Anshul/.gradle/caches/transforms-3/1b40e4574e76bff5831ef4bf4270480d/transformed/appcompat-1.4.1/res/values-v23/values-v23.xml",
+                    "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-3\\e2a06fbf1db0940d3045823cb1a36aed\\transformed\\appcompat-1.4.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",

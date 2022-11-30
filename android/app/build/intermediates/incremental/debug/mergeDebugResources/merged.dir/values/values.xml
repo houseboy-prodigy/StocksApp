@@ -288,6 +288,7 @@
     <integer name="abc_config_activityShortDur">150</integer>
     <integer name="cancel_button_image_alpha">127</integer>
     <integer name="config_tooltipAnimTime">150</integer>
+    <integer name="google_play_services_version">12451000</integer>
     <integer name="react_native_dev_server_port">8081</integer>
     <integer name="react_native_inspector_proxy_port">8081</integer>
     <integer name="status_bar_notification_info_maxnum">999</integer>
@@ -352,6 +353,13 @@
     <string name="catalyst_settings" project="catalyst" translatable="false">Settings</string>
     <string name="catalyst_settings_title" project="catalyst" translatable="false">Debug Settings</string>
     <string name="combobox_description" translatable="false">Combo Box</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="default_web_client_id" translatable="false">428019255276-kmrflu5vbho6ejda9nqpllqd1pj4tunm.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">428019255276</string>
+    <string name="google_api_key" translatable="false">AIzaSyBMMEpRpX1BoyKYtBt-1KQxYtAkaPx9MwQ</string>
+    <string name="google_app_id" translatable="false">1:428019255276:android:dad30d6c16d4372ce1a2c9</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBMMEpRpX1BoyKYtBt-1KQxYtAkaPx9MwQ</string>
+    <string name="google_storage_bucket" translatable="false">stocksapp-c7281.appspot.com</string>
     <string name="header_description" translatable="false">Heading</string>
     <string name="image_description" translatable="false">Image</string>
     <string name="imagebutton_description" translatable="false">Button, Image</string>
@@ -360,6 +368,7 @@
     <string name="menubar_description" translatable="false">Menu Bar</string>
     <string name="menuitem_description" translatable="false">Menu Item</string>
     <string name="progressbar_description" translatable="false">Progress Bar</string>
+    <string name="project_id" translatable="false">stocksapp-c7281</string>
     <string name="radiogroup_description" translatable="false">Radio Group</string>
     <string name="rn_tab_description" translatable="false">Tab</string>
     <string name="scrollbar_description" translatable="false">Scroll Bar</string>
