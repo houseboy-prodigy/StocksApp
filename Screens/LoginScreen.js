@@ -16,9 +16,6 @@ class LoginScreen extends React.Component {
       })
     }
 
-    //This function is used to add a new entry to the users table in Firebase DB. First we need to get the email (since we add it to the DB) in string form, and then we "update"
-    //the users object in the realtime DB. The object's key should be the string of the email, and then it should have that email and their status (of management or reg user) added to
-    //users object.
     writeUserData = (email) => {
       try {
         //var database = firebase.database();
@@ -44,13 +41,14 @@ class LoginScreen extends React.Component {
         }
         else {
             
-          auth().createUserWithEmailAndPassword(email, password) /////////
-          alert("click")
+          auth().createUserWithEmailAndPassword(email, password).then(function(user) {  //////
+            console.log(user);
+            navigate('Home')
+            })
           
           var email2 = email.replace(".","");
         
           this.writeUserData(email2);
-         navigate('Home')//
         }
       } catch (error) {
         console.log(error.toString())
@@ -61,8 +59,9 @@ class LoginScreen extends React.Component {
       try {
         auth().signInWithEmailAndPassword(email, password).then(function(user) {  //////
         console.log(user);
-        })
         navigate('Home')
+        })
+        
       } catch (error) {
         alert("Could not log in; user or password is wrong")
         console.log(error.toString())
