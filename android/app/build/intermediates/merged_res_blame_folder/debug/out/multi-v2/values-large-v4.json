@@ -1,8 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "com.stocksapp-mergeDebugResources-23:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.stocksapp-mergeDebugResources-30:/values-large-v4/values-large-v4.xml",
             "map": [
+                {
+                    "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-3\\0d1cfdcc191390bf79cf28fe48b6f226\\transformed\\material-1.1.0\\res\\values-large-v4\\values-large-v4.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,177",
+                        "endColumns": "121,133",
+                        "endOffsets": "172,306"
+                    },
+                    "to": {
+                        "startLines": "11,12",
+                        "startColumns": "4,4",
+                        "startOffsets": "752,874",
+                        "endColumns": "121,133",
+                        "endOffsets": "869,1003"
+                    }
+                },
                 {
                     "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-3\\e2a06fbf1db0940d3045823cb1a36aed\\transformed\\appcompat-1.4.1\\res\\values-large-v4\\values-large-v4.xml",
                     "from": {

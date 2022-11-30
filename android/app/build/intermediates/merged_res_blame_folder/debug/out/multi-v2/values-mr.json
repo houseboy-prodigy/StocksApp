@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.stocksapp-mergeDebugResources-23:/values-mr/values-mr.xml",
+            "outputFile": "com.stocksapp-mergeDebugResources-30:/values-mr/values-mr.xml",
             "map": [
                 {
                     "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-3\\47b0a75a35b9d53b43a810f4bc8a2582\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-mr\\values.xml",

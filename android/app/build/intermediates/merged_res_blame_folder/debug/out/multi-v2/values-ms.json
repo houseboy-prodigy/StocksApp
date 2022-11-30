@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.stocksapp-mergeDebugResources-23:/values-ms/values-ms.xml",
+            "outputFile": "com.stocksapp-mergeDebugResources-30:/values-ms/values-ms.xml",
             "map": [
                 {
                     "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-3\\e2a06fbf1db0940d3045823cb1a36aed\\transformed\\appcompat-1.4.1\\res\\values-ms\\values-ms.xml",
