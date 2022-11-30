@@ -5,58 +5,13 @@
  * @format
  * @flow strict-local
  */
-import userImage from './assets/user.png'
-import React,{ useState,Component } from 'react';
-
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  useColorScheme,
-  Button, Text, 
-  View, 
-  Image, 
-  TouchableOpacity,
-  TextInput,
-  StyleSheet
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-/* $FlowFixMe[missing-local-annot] The type annotation(s) required by Flow's
- * LTI update could not be added via codemod */
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-
+import React, { useState,Component } from 'react';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity,TextInput} from 'react-native';
+import 'react-native-gesture-handler';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './screens/homescreen'
+const Stack = createStackNavigator();
 // container for screen content and components
 class Container extends Component {
 	render() {
@@ -107,20 +62,21 @@ class Header extends Component {
 	}
 }
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-    <Text style={{ color: "#0378A6", fontSize: 24 }}>Greetings, Human!</Text>
-  </View>
-
-  );
-};
+class App extends Component {
+	render() {
+		return (
+      <NavigationContainer>
+		    <Stack.Navigator initialRouteName="Home">
+          <Stack.Screen 
+            name="Home" 
+            component={HomeScreen} 
+            options={{ title: 'Welcome' }}
+          />
+        </Stack.Navigator>	
+			</NavigationContainer>
+    );
+   }
+}
 
 const styles = StyleSheet.create({
   sectionContainer: {
