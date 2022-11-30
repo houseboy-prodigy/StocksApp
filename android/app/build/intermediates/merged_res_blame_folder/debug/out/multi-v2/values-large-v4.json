@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.stocksapp-mergeDebugResources-30:/values-large-v4/values-large-v4.xml",
+            "outputFile": "com.stocksapp-mergeDebugResources-33:/values-large-v4/values-large-v4.xml",
             "map": [
                 {
                     "source": "C:\\Users\\adria\\.gradle\\caches\\transforms-3\\0d1cfdcc191390bf79cf28fe48b6f226\\transformed\\material-1.1.0\\res\\values-large-v4\\values-large-v4.xml",

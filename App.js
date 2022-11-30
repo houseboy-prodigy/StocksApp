@@ -1,35 +1,45 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
  import React from 'react';
-//  import type {Node} from 'react';
-//  import { Text, View } from 'react-native';
  import { NavigationContainer } from '@react-navigation/native';
-//  import { createStackNavigator } from 'react-navigation-stack';
  import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+ import 'react-native-gesture-handler';
+//  import { firebase } from './firebase/config'
+//  import * as firebase from 'firebase/app';
+import firebase from '@react-native-firebase/app';
+//  import screens here
  import LoginScreen from './Screens/LoginScreen';
- 
+ import HomeScreen from './Screens/HomeScreen';
+ import { firebaseConfig } from './firebase-key/config'
 
-//  const AppNavigator = createStackNavigator({
-//     Home: LoginScreen,
-//  },
-//  {
-//     initialRouteName: 'Home'
-//  });
+
+// const firebaseConfig = {
+//   apiKey: "AIzaSyD7xuivhSxMJ5nrDkrENecGTh0hPIOOt7A",
+//   authDomain: "stocksapp-442f9.firebaseapp.com",
+//   projectId: "stocksapp-442f9",
+//   storageBucket: "stocksapp-442f9.appspot.com",
+//   messagingSenderId: "1019181909612",
+//   appId: "1:1019181909612:web:bc8cdd5b79371c4cbbba49",
+//   measurementId: "G-V7BJYTBZWL"
+// };
+
+// Initialize Firebase
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+} else {
+  firebase.app();
+}
+ 
 
  const Stack = createNativeStackNavigator();
 
  function App() {
+
+  // initial screen is initialRouteName
+  // add screens under stack.navigator
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={LoginScreen} />
+      <Stack.Navigator initialRouteName="Login"> 
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Home" component={HomeScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
@@ -37,15 +47,3 @@
 
 export default App;
  
-//  const App: () => Node = () => {
- 
-//    return (
-//      <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-//      <Text style={{ color: "#0378A6", fontSize: 24 }}>Greetings, Human!</Text>
-//    </View>
- 
-//    );
-//  };
-
- 
-//  export default App;

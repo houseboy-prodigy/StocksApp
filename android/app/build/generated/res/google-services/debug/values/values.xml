@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="default_web_client_id" translatable="false">428019255276-kmrflu5vbho6ejda9nqpllqd1pj4tunm.apps.googleusercontent.com</string>
-    <string name="gcm_defaultSenderId" translatable="false">428019255276</string>
-    <string name="google_api_key" translatable="false">AIzaSyBMMEpRpX1BoyKYtBt-1KQxYtAkaPx9MwQ</string>
-    <string name="google_app_id" translatable="false">1:428019255276:android:dad30d6c16d4372ce1a2c9</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBMMEpRpX1BoyKYtBt-1KQxYtAkaPx9MwQ</string>
-    <string name="google_storage_bucket" translatable="false">stocksapp-c7281.appspot.com</string>
-    <string name="project_id" translatable="false">stocksapp-c7281</string>
+    <string name="default_web_client_id" translatable="false">1019181909612-gbgv68rk0hue8ut5mv19v2aene6g4b7p.apps.googleusercontent.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">1019181909612</string>
+    <string name="google_api_key" translatable="false">AIzaSyBbM_3ZusTkGS1h7j9oRElyx_mydpzXcxo</string>
+    <string name="google_app_id" translatable="false">1:1019181909612:android:33040dcb6ccd644bbbba49</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyBbM_3ZusTkGS1h7j9oRElyx_mydpzXcxo</string>
+    <string name="google_storage_bucket" translatable="false">stocksapp-442f9.appspot.com</string>
+    <string name="project_id" translatable="false">stocksapp-442f9</string>
 </resources>

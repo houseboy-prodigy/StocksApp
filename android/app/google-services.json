@@ -1,33 +1,33 @@
 {
   "project_info": {
-    "project_number": "428019255276",
-    "project_id": "stocksapp-c7281",
-    "storage_bucket": "stocksapp-c7281.appspot.com"
+    "project_number": "1019181909612",
+    "project_id": "stocksapp-442f9",
+    "storage_bucket": "stocksapp-442f9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:428019255276:android:dad30d6c16d4372ce1a2c9",
+        "mobilesdk_app_id": "1:1019181909612:android:33040dcb6ccd644bbbba49",
         "android_client_info": {
           "package_name": "com.stocksapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "428019255276-kmrflu5vbho6ejda9nqpllqd1pj4tunm.apps.googleusercontent.com",
+          "client_id": "1019181909612-gbgv68rk0hue8ut5mv19v2aene6g4b7p.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBMMEpRpX1BoyKYtBt-1KQxYtAkaPx9MwQ"
+          "current_key": "AIzaSyBbM_3ZusTkGS1h7j9oRElyx_mydpzXcxo"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "428019255276-kmrflu5vbho6ejda9nqpllqd1pj4tunm.apps.googleusercontent.com",
+              "client_id": "1019181909612-gbgv68rk0hue8ut5mv19v2aene6g4b7p.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
