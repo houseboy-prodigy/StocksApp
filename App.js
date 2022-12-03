@@ -9,6 +9,7 @@ import firebase from '@react-native-firebase/app';
 //  import screens here
  import LoginScreen from './Screens/LoginScreen';
  import HomeScreen from './Screens/HomeScreen';
+import WriteSuccess from './Screens/WriteSuccess';
  
 
 
@@ -28,9 +29,10 @@ if (!firebase.apps.length) {
   // add screens under stack.navigator
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login"> 
+      <Stack.Navigator initialRouteName="Success"> 
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Success" component={WriteSuccess} />
       </Stack.Navigator>
     </NavigationContainer>
   );

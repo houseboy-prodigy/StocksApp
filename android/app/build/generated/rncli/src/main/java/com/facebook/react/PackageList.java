@@ -19,6 +19,8 @@ import io.invertase.firebase.analytics.ReactNativeFirebaseAnalyticsPackage;
 import io.invertase.firebase.app.ReactNativeFirebaseAppPackage;
 // @react-native-firebase/auth
 import io.invertase.firebase.auth.ReactNativeFirebaseAuthPackage;
+// @react-native-firebase/database
+import io.invertase.firebase.database.ReactNativeFirebaseDatabasePackage;
 // @react-native-firebase/remote-config
 import io.invertase.firebase.config.ReactNativeFirebaseConfigPackage;
 // react-native-gesture-handler
@@ -78,6 +80,7 @@ public class PackageList {
       new ReactNativeFirebaseAnalyticsPackage(),
       new ReactNativeFirebaseAppPackage(),
       new ReactNativeFirebaseAuthPackage(),
+      new ReactNativeFirebaseDatabasePackage(),
       new ReactNativeFirebaseConfigPackage(),
       new RNGestureHandlerPackage(),
       new ReanimatedPackage(),
