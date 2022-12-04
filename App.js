@@ -10,9 +10,8 @@ import { Button, StyleSheet, Text, View, Image, TouchableOpacity,TextInput} from
 import 'react-native-gesture-handler';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HeaderWithPL from './components/HeaderWithPL'
-
 import NavBar from './components/NavBar'
 import appleImage from './assets/apple.png'
 import googleImage from './assets/google.png'
@@ -22,17 +21,21 @@ import userImage from './assets/user.png'
 import addImage from './assets/add.png'
 import favoriteImage from './assets/favorites.png'
 import marketImage from './assets/chart.png'
-//import HomeScreen from './screens/homescreen'
-//import FavoritesScreen from './screens/favoritesscreen'
+import searchImage from './assets/search.png'
+import HomeScreen from './screens/homescreen'
+import FavoritesScreen from './screens/favoritesscreen'
+import SearchScreen from './screens/searchscreen'
+import ProfileScreen from './screens/profilescreen'
 import { firebaseConfig } from './firebase-key/config'
 //  import { firebase } from './firebase/config'
 //  import * as firebase from 'firebase/app';
 import firebase from '@react-native-firebase/app';
 import LoginScreen from './screens/LoginScreen';
+import AddScreen from './screens/addscreen'
 const Stack = createNativeStackNavigator();
 // container for screen content and components
 /*Home screen Code*/
-
+/*
 class ContentText extends Component {
 	render() {
 		return (
@@ -129,7 +132,7 @@ class HomeScreen extends Component {
 
 /*Home Screen Code end*/
 /*Favorites Screen Code*/
-
+/*
 class FavoritesScreen extends Component {
 
   loadRouteFavorites = () => this.props.navigation.navigate('Favorites');
@@ -149,6 +152,106 @@ class FavoritesScreen extends Component {
 }
 /*FavoritesScreenCodeEnd*/
 
+
+const Tab = createBottomTabNavigator();
+
+function MyTabs() {
+  return (
+    <Tab.Navigator
+      initialRouteName="Home"
+      screenOptions={{
+        tabBarActiveTintColor: '#e91e63',
+      }}
+    >
+    <Tab.Screen
+    name="Home"
+    component={HomeScreen}
+    options={{
+      tabBarIcon: ({ focused }) => {
+        return (
+          <View>
+            <Image
+              source={homeImage}
+              resizeMode="contain"
+              style={{ width: 25 }}
+            />
+          </View>
+        );
+      },
+    }}
+  />
+  <Tab.Screen
+  name="Favorites"
+  component={FavoritesScreen}
+  options={{
+    tabBarIcon: ({ focused }) => {
+      return (
+        <View>
+          <Image
+            source={favoriteImage}
+            resizeMode="contain"
+            style={{ width: 25 }}
+          />
+        </View>
+      );
+    },
+  }}
+/>
+<Tab.Screen
+name="Add"
+component={AddScreen}
+options={{
+  tabBarIcon: ({ focused }) => {
+    return (
+      <View>
+        <Image
+          source={addImage}
+          resizeMode="contain"
+          style={{ width: 25 }}
+        />
+      </View>
+    );
+  },
+}}
+/>
+<Tab.Screen
+name="Search"
+component={SearchScreen}
+options={{
+  tabBarIcon: ({ focused }) => {
+    return (
+      <View>
+        <Image
+          source={searchImage}
+          resizeMode="contain"
+          style={{ width: 25 }}
+        />
+      </View>
+    );
+  },
+}}
+/>
+<Tab.Screen
+name="Profile"
+component={ProfileScreen}
+options={{
+  tabBarIcon: ({ focused }) => {
+    return (
+      <View>
+        <Image
+          source={favoriteImage}
+          resizeMode="contain"
+          style={{ width: 25 }}
+        />
+      </View>
+    );
+  },
+}}
+/>
+    </Tab.Navigator>
+  );
+}
+
 // Initialize Firebase
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
@@ -160,15 +263,7 @@ class App extends Component {
 	render() {
 		return (
       <NavigationContainer>
-		    <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen 
-            name="Home" 
-            component={HomeScreen} 
-            options={{ title: 'Welcome' }}
-          />
-          <Stack.Screen name="Favorites" component={FavoritesScreen} />
-          <Stack.Screen name="Login" component={LoginScreen} />
-        </Stack.Navigator>	
+      <MyTabs />
 			</NavigationContainer>
     );
    }

@@ -47,33 +47,6 @@ class FavoritesScreen extends Component {
           <StockBox name='AAPL'
           price='210.1'
           image={appleImage}/>
-          <View style={styles.buttonBox}>
-          <NavButton 
-              color="#black"
-source={homeImage}
-              onPress={this.loadRoute}
-/>
-<NavButton 
-              color="#black"
-source={favoriteImage} 
-              onPress={this.loadRouteFavorites}
-/>
-<NavButton 
-              color="#black"
-source={addImage} 
-              onPress={this.loadRouteAdd}
-/>
-          <NavButton 
-              color="#black"
-source={marketImage} 
-              onPress={this.loadRouteProfile}
-/>
-          <NavButton 
-              color="black"
-source={userImage} 
-              onPress={this.loadRouteProfile}
-/>
-</View>
 		</Container>
 		);
 	}

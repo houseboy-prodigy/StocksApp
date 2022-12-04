@@ -3,7 +3,7 @@ import userImage from '../assets/user.png'
 import addImage from '../assets/add.png'
 import favoritesImage from '../assets/favorites.png'
 import chartImage from '../assets/chart.png'
-
+import searchImage from '../assets/search.png'
 import React, { useState,Component } from 'react';
 import { Button, StyleSheet, Text, View, Image, TouchableOpacity,TextInput} from 'react-native';
 
@@ -28,7 +28,7 @@ class NavBar extends Component {
             <NavButton 
               color="#black"
               source={homeImage}
-            //onPress={this.loadRoute}
+              onPress={this.loadRoute}
             />
             <NavButton 
             color="#black"
@@ -37,7 +37,7 @@ class NavBar extends Component {
           />
           <NavButton 
           color="#black"
-          source={addImage}
+          source={searchImage}
         //onPress={this.loadRoute}
         />
         <NavButton 
@@ -64,9 +64,9 @@ const styles = StyleSheet.create({
 	},
     buttonBox: {
         flex: 1,
-        paddingTop: 80,
         flexDirection: 'row',
         width: 150,
+        paddingTop: 250,
         alignItems: 'center',
         justifyContent: 'flex-start',
         },
