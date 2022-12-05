@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image,TouchableOpacity, TextInput} from 'react-native';
+import { Button, StyleSheet, Text, View, Image,TouchableOpacity, TextInput, ScrollView} from 'react-native';
 import Header from '../components/Header'
 import NavBar from '../components/NavBar'
 import appleImage from '../assets/apple.png'
@@ -12,31 +12,10 @@ import addImage from '../assets/add.png'
 import favoriteImage from '../assets/favorites.png'
 import marketImage from '../assets/chart.png'
 import { useNavigation } from '@react-navigation/native';
-/*
-class NavButton extends Component {
+import Container from '../components/Container'
+import StockBoxFav from '../components/StockBoxWithFav'
 
-  render(){
-    return(
-      <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={this.props.onPress}>
-    <Image style= {styles.button}
-     source={this.props.source}
-    />
-
-</TouchableOpacity>
-    )
-  }
-}
-*/
 // container for screen content and components
-class Container extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				{this.props.children}
-			</View>
-		);
-	}
-}
 
 class SearchScreen extends Component {
     
@@ -60,7 +39,7 @@ class SearchScreen extends Component {
         .then(res => res.json())
         .then(responseJson =>
           this.setState({
-            isLoading: false,
+            isLoading: true,
             searchResult: {
               price: responseJson.results[0].o,
               name: responseJson.ticker
@@ -70,21 +49,39 @@ class SearchScreen extends Component {
         .catch(error => this.setState({ error }));
     };
 
+    searchAgain = () => {
+      this.setState({
+        searchInput: "",
+        searchResult: null,
+        error: "",
+        isLoading: false
+      });
+    }
+
     render() {
         
-        const { searchInput, searchResult, isLoading, error } = this.state;
-    
-        if (searchResult) {
+        const { searchInput, searchResult, error, isLoading } = this.state;
+        
+        if (searchResult && isLoading) {
           return (
+            
             <Container>
               <View>
               <Header headingStyle={styles.heading} title="Search Results"/>
-              <StockBox name={searchResult.name}
+              <StockBoxFav name={searchResult.name}
               price={searchResult.price}
               />
-              <NavBar/>
+              <Button
+  onPress={this.searchAgain}
+  title="Search Again"
+  color="#1D519C"
+
+  accessibilityLabel="Learn more about this purple button"
+/>
               </View>
+              
             </Container>
+            
           );
         } else {
           return (

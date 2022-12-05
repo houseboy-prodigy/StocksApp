@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import HeaderWithPL from '../components/HeaderWithPL'
 import NavBar from '../components/NavBar'
@@ -7,50 +7,52 @@ import googleImage from '../assets/google.png'
 import StockBox from '../components/StockBox'
 import getPriceFromApi from '../components/ApiCall'
 import Header from '../components/Header'
-import homeImage from '../assets/home.png'
-import userImage from '../assets/user.png'
-import addImage from '../assets/add.png'
-import favoriteImage from '../assets/favorites.png'
-import marketImage from '../assets/chart.png'
+// import styles from '../Styles/styles'
+import {Form, Input, Item, Label} from 'native-base';
+import { value } from 'deprecated-react-native-prop-types/DeprecatedTextInputPropTypes';
+import * as firebase from 'firebase/app';
+import database from '@react-native-firebase/database';
+import { RotateInUpLeft } from 'react-native-reanimated';
+import { route } from '@react-navigation/native';
+import Container from '../components/Container'
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 // container for screen content and components
-class Container extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				{this.props.children}
-			</View>
-		);
-	}
-}
-class NavButton extends Component {
 
-    render(){
-      return(
-        <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={this.props.onPress}>
-      <Image style= {styles.button}
-       source={this.props.source}
-      />
-  
-  </TouchableOpacity>
-      )
+
+var objectDict = {}
+
+
+export default function FavoritesScreen() {
+    const [data, setData] = useState([]);
+    
+    useEffect(() => {
+      const favarr = [];
+      const res = 
+      database()
+      .ref('testData')
+      .on('value', snapshot => {
+      let data = snapshot.val() || {};
+      objectDict = {...data};
+      //console.log(objectDict)
+      Object.entries(objectDict).forEach(([key, value]) => {
+          //console.log(value)
+          let tempObj = {name: value.name, price: value.value}
+          favarr.push(tempObj)
+         })
+      //console.log(favarr)
+      setData(favarr)
+      // this.setState({...arr})
+      })
+    }, []);
+    return (
+        <Container>
+              <View>
+              <Header headingStyle={styles.heading} title="Favorites"/>
+              {data.map((item) => (<StockBox name={item.name} price={item.price} image={require('../assets/home.png')}/>))}
+              </View>
+            </Container>
+    )
     }
-  }
-class FavoritesScreen extends Component {
-
-  loadRoute = () => this.props.navigation.navigate('Home');
-  loadRouteAdd = () => this.props.navigation.navigate('Add');
-  loadRouteProfile = () => this.props.navigation.navigate('Profile');
-	render() {
-		return (
-		<Container>
-          <Header headingStyle={styles.heading} title="Favorites"/>
-          <StockBox name='AAPL'
-          price='210.1'
-          image={appleImage}/>
-		</Container>
-		);
-	}
-}
 
 const styles = StyleSheet.create({
     container: {
@@ -79,4 +81,3 @@ const styles = StyleSheet.create({
         height: 20,
         },
 })
-export default FavoritesScreen;

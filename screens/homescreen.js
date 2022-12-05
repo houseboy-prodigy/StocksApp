@@ -13,6 +13,7 @@ import searchImage from '../assets/search.png'
 import favoriteImage from '../assets/favorites.png'
 import marketImage from '../assets/chart.png'
 import { useNavigation } from '@react-navigation/native';
+import Container from '../components/Container'
 class NavButton extends Component {
 
   render(){
@@ -25,17 +26,6 @@ class NavButton extends Component {
 </TouchableOpacity>
     )
   }
-}
-
-// container for screen content and components
-class Container extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				{this.props.children}
-			</View>
-		);
-	}
 }
 
 const arr = [{title: 'Test', name: 'GOOG', price: '23',image: googleImage},{title: 'Test', name: 'AAPPL', price: '22',image: appleImage}]

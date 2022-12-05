@@ -11,6 +11,7 @@ MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.125.0] /Users/Anshul/.
 MERGED from [:react-native-community_masked-view] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-community/masked-view/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-firebase_analytics] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-34:12
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-13:12
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-firebase_remote-config] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/remote-config/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-firebase_app] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-32:12
 MERGED from [:react-native-gesture-handler] /Users/Anshul/Desktop/git/StocksApp/node_modules/react-native-gesture-handler/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:2:1-9:12
@@ -50,9 +51,12 @@ MERGED from [androidx.core:core-ktx:1.6.0] /Users/Anshul/.gradle/caches/transfor
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/Anshul/.gradle/caches/transforms-3/499913aa779d5677f84de1b3821854aa/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/Anshul/.gradle/caches/transforms-3/6c2e0b04a335666cd4b78cb912868b2a/transformed/sqlite-2.1.0/AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gradle/caches/transforms-3/6e883c601bee53e8c4b22f38b6ba8b42/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:17:1-40:12
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:15:1-37:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/9ea428a0fcb1b4b3064f1cebbbfc357b/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/Anshul/.gradle/caches/transforms-3/286acdc9fe991fd0502d83e17f018e81/transformed/jetified-play-services-auth-base-18.0.4/AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/Anshul/.gradle/caches/transforms-3/12732c2970d3be281575bb40ab2e66f0/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.0] /Users/Anshul/.gradle/caches/transforms-3/826c9cb8f9c61d7e411fa18e7d165c50/transformed/jetified-firebase-appcheck-interop-16.1.0/AndroidManifest.xml:15:1-25:12
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/dcb421be61865670405ff06e1eda51d3/transformed/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/f88b5a2c0b62a187e4b15b1bc1640873/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:17:1-37:12
 MERGED from [com.google.firebase:firebase-analytics:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/2af23d2c1d2e62d7390e9f225a5c3fa1/transformed/jetified-firebase-analytics-21.2.0/AndroidManifest.xml:2:1-9:12
@@ -133,8 +137,12 @@ MERGED from [:react-native-firebase_analytics] /Users/Anshul/Desktop/git/StocksA
 MERGED from [:react-native-firebase_analytics] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-67
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-67
 MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/caches/transforms-3/b7e867331c232a519b2275293571ea9e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:23:5-67
 MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/caches/transforms-3/b7e867331c232a519b2275293571ea9e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:23:5-67
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:25:5-67
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:25:5-67
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/176c46119a8ca0c32ca2ed3d81fc8971/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:22:5-67
@@ -167,8 +175,12 @@ MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/cac
 MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/caches/transforms-3/b7e867331c232a519b2275293571ea9e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:26:5-71:19
 MERGED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gradle/caches/transforms-3/6e883c601bee53e8c4b22f38b6ba8b42/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gradle/caches/transforms-3/6e883c601bee53e8c4b22f38b6ba8b42/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:22:5-38:19
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:27:5-35:19
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:27:5-35:19
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/Anshul/.gradle/caches/transforms-3/12732c2970d3be281575bb40ab2e66f0/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/Anshul/.gradle/caches/transforms-3/12732c2970d3be281575bb40ab2e66f0/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.0] /Users/Anshul/.gradle/caches/transforms-3/826c9cb8f9c61d7e411fa18e7d165c50/transformed/jetified-firebase-appcheck-interop-16.1.0/AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.0] /Users/Anshul/.gradle/caches/transforms-3/826c9cb8f9c61d7e411fa18e7d165c50/transformed/jetified-firebase-appcheck-interop-16.1.0/AndroidManifest.xml:23:5-20
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/f88b5a2c0b62a187e4b15b1bc1640873/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/f88b5a2c0b62a187e4b15b1bc1640873/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:19:5-23:19
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:27:5-35:19
@@ -279,6 +291,8 @@ MERGED from [:react-native-firebase_analytics] /Users/Anshul/Desktop/git/StocksA
 MERGED from [:react-native-firebase_analytics] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_remote-config] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/remote-config/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_remote-config] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/remote-config/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_app] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:6:5-8:41
@@ -357,12 +371,18 @@ MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/Anshul/.gradle/caches/transfor
 MERGED from [androidx.sqlite:sqlite:2.1.0] /Users/Anshul/.gradle/caches/transforms-3/6c2e0b04a335666cd4b78cb912868b2a/transformed/sqlite-2.1.0/AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gradle/caches/transforms-3/6e883c601bee53e8c4b22f38b6ba8b42/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gradle/caches/transforms-3/6e883c601bee53e8c4b22f38b6ba8b42/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:18:5-20:41
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/9ea428a0fcb1b4b3064f1cebbbfc357b/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/9ea428a0fcb1b4b3064f1cebbbfc357b/transformed/jetified-play-services-auth-api-phone-18.0.1/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/Anshul/.gradle/caches/transforms-3/286acdc9fe991fd0502d83e17f018e81/transformed/jetified-play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-auth-base:18.0.4] /Users/Anshul/.gradle/caches/transforms-3/286acdc9fe991fd0502d83e17f018e81/transformed/jetified-play-services-auth-base-18.0.4/AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/Anshul/.gradle/caches/transforms-3/12732c2970d3be281575bb40ab2e66f0/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-safetynet:17.0.0] /Users/Anshul/.gradle/caches/transforms-3/12732c2970d3be281575bb40ab2e66f0/transformed/jetified-play-services-safetynet-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.0] /Users/Anshul/.gradle/caches/transforms-3/826c9cb8f9c61d7e411fa18e7d165c50/transformed/jetified-firebase-appcheck-interop-16.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-appcheck-interop:16.1.0] /Users/Anshul/.gradle/caches/transforms-3/826c9cb8f9c61d7e411fa18e7d165c50/transformed/jetified-firebase-appcheck-interop-16.1.0/AndroidManifest.xml:18:5-20:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/dcb421be61865670405ff06e1eda51d3/transformed/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.firebase:firebase-database-collection:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/dcb421be61865670405ff06e1eda51d3/transformed/jetified-firebase-database-collection-18.0.1/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/f88b5a2c0b62a187e4b15b1bc1640873/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-base:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/f88b5a2c0b62a187e4b15b1bc1640873/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:18:5-43
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:20:5-22:41
@@ -493,8 +513,12 @@ uses-permission#android.permission.ACCESS_NETWORK_STATE
 ADDED from [:react-native-firebase_analytics] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:9:5-79
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-79
 MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/caches/transforms-3/b7e867331c232a519b2275293571ea9e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/caches/transforms-3/b7e867331c232a519b2275293571ea9e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:24:5-79
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/176c46119a8ca0c32ca2ed3d81fc8971/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:23:5-79
@@ -513,6 +537,8 @@ uses-permission#android.permission.WAKE_LOCK
 ADDED from [:react-native-firebase_analytics] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/analytics/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:11:5-68
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
 MERGED from [:react-native-firebase_auth] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/auth/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
+MERGED from [:react-native-firebase_database] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/database/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:10:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/176c46119a8ca0c32ca2ed3d81fc8971/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/176c46119a8ca0c32ca2ed3d81fc8971/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:24:5-68
 MERGED from [com.google.android.gms:play-services-measurement:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/4e0103d7b393deb13284d77db3291d84/transformed/jetified-play-services-measurement-21.2.0/AndroidManifest.xml:25:5-68
@@ -569,6 +595,8 @@ service#com.google.firebase.components.ComponentDiscoveryService
 ADDED from [:react-native-firebase_app] /Users/Anshul/Desktop/git/StocksApp/node_modules/@react-native-firebase/app/android/build/intermediates/merged_manifest/debug/AndroidManifest.xml:15:9-23:19
 MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/caches/transforms-3/b7e867331c232a519b2275293571ea9e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:64:9-70:19
 MERGED from [com.google.firebase:firebase-auth:21.1.0] /Users/Anshul/.gradle/caches/transforms-3/b7e867331c232a519b2275293571ea9e/transformed/jetified-firebase-auth-21.1.0/AndroidManifest.xml:64:9-70:19
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:28:9-34:19
+MERGED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:28:9-34:19
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:28:9-34:19
 MERGED from [com.google.firebase:firebase-config:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/f707b304409f6b0e1886529c17f8f1ae/transformed/jetified-firebase-config-21.2.0/AndroidManifest.xml:28:9-34:19
 MERGED from [com.google.android.gms:play-services-measurement-api:21.2.0] /Users/Anshul/.gradle/caches/transforms-3/176c46119a8ca0c32ca2ed3d81fc8971/transformed/jetified-play-services-measurement-api-21.2.0/AndroidManifest.xml:28:9-34:19
@@ -677,6 +705,12 @@ ADDED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gra
 		ADDED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gradle/caches/transforms-3/6e883c601bee53e8c4b22f38b6ba8b42/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:36:13-107
 	android:name
 		ADDED from [com.google.android.gms:play-services-auth:20.3.0] /Users/Anshul/.gradle/caches/transforms-3/6e883c601bee53e8c4b22f38b6ba8b42/transformed/jetified-play-services-auth-20.3.0/AndroidManifest.xml:34:13-89
+meta-data#com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar
+ADDED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:31:13-33:85
+	android:value
+		ADDED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:33:17-82
+	android:name
+		ADDED from [com.google.firebase:firebase-database:20.1.0] /Users/Anshul/.gradle/caches/transforms-3/b24d311a0ac6c9f7c7c9f190cba49386/transformed/jetified-firebase-database-20.1.0/AndroidManifest.xml:32:17-109
 activity#com.google.android.gms.common.api.GoogleApiActivity
 ADDED from [com.google.android.gms:play-services-base:18.0.1] /Users/Anshul/.gradle/caches/transforms-3/f88b5a2c0b62a187e4b15b1bc1640873/transformed/jetified-play-services-base-18.0.1/AndroidManifest.xml:20:9-22:45
 	android:exported

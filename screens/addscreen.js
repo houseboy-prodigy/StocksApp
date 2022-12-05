@@ -4,17 +4,8 @@ import Header from '../components/Header'
 import NavBar from '../components/NavBar'
 import StockBox from '../components/StockBox'
 import TextInputBox from '../components/TextInputBox'
+import Container from '../components/Container'
 
-// container for screen content and components
-class Container extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				{this.props.children}
-			</View>
-		);
-	}
-}
 class AddScreen extends Component {
 render() {
 return(
