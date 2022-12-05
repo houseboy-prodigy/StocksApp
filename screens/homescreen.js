@@ -1,123 +1,88 @@
-import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
+import React, { Component, useEffect, useState } from 'react';
+import { Button, StyleSheet, Text, View, Image,TouchableOpacity,  SafeAreaView, ScrollView} from 'react-native';
 import HeaderWithPL from '../components/HeaderWithPL'
 import NavBar from '../components/NavBar'
 import appleImage from '../assets/apple.png'
 import googleImage from '../assets/google.png'
 import StockBox from '../components/StockBox'
 import getPriceFromApi from '../components/ApiCall'
-import homeImage from '../assets/home.png'
-import userImage from '../assets/user.png'
-import addImage from '../assets/add.png'
-import searchImage from '../assets/search.png'
-import favoriteImage from '../assets/favorites.png'
-import marketImage from '../assets/chart.png'
-import { useNavigation } from '@react-navigation/native';
+import Header from '../components/Header'
+// import styles from '../Styles/styles'
+import {Form, Input, Item, Label} from 'native-base';
+import { value } from 'deprecated-react-native-prop-types/DeprecatedTextInputPropTypes';
+import * as firebase from 'firebase/app';
+import database from '@react-native-firebase/database';
+import { RotateInUpLeft } from 'react-native-reanimated';
+import { route } from '@react-navigation/native';
 import Container from '../components/Container'
-class NavButton extends Component {
+import Swipeable from 'react-native-gesture-handler/Swipeable';
+// container for screen content and components
 
-  render(){
-    return(
-      <TouchableOpacity style={styles.button} activeOpacity={0.5} onPress={this.props.onPress}>
-    <Image style= {styles.button}
-     source={this.props.source}
-    />
 
-</TouchableOpacity>
+var objectDict = {}
+
+
+export default function HomeScreen() {
+    const [data, setData] = useState([]);
+    const [total,setTotal] = useState();
+    useEffect(() => {
+      const favarr = [];
+      const res = 
+      database()
+      .ref('UserPortfolio')
+      .on('value', snapshot => {
+      let data = snapshot.val() || {};
+      objectDict = {...data};
+      //console.log(objectDict)
+      let total = 0
+      Object.entries(objectDict).forEach(([key, value]) => {
+          //console.log(value)
+          let tempObj = {name: value.name, price: value.cost}
+          total += value.cost
+          favarr.push(tempObj)
+         })
+      //console.log(favarr)
+      setData(favarr)
+      setTotal(total)
+      // this.setState({...arr})
+      })
+    }, []);
+    return (
+      <SafeAreaView style={styles.container}>
+      <ScrollView>
+              <View>
+              <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} loss = "-$20 200%"/>
+              {data.map((item) => (<StockBox name={item.name} price={item.price} image={require('../assets/home.png')}/>))}
+              </View>
+              </ScrollView>
+            </SafeAreaView>
     )
-  }
-}
+    }
 
-const arr = [{title: 'Test', name: 'GOOG', price: '23',image: googleImage},{title: 'Test', name: 'AAPPL', price: '22',image: appleImage}]
-
-class HomeScreen extends Component {
-  loadRouteFavorites = () => this.props.navigation.navigate('Favorites');
-  loadRouteAdd = () => this.props.navigation.navigate('Add');
-  loadRouteSearch = () => this.props.navigation.navigate('Search');
-  loadRouteProfile = () => this.props.navigation.navigate('Profile');
-
-  ticker = getPriceFromApi()
-	render() {
-		return (
-				<Container>
-          <HeaderWithPL headingStyle={styles.heading} title="$200,00" loss = "-$20 200%"/>
-          {arr.map((item) => (<StockBox name={item.name} price={item.price} image={item.image}/>))}
-				</Container>
-		);
-	}
-}
-
-/*
-const HomeScreen = ({navigation}) => {
-  //loadRouteFavorites = () => this.props.navigation.navigate('Favorites');
-  //loadRouteAdd = () => this.props.navigation.navigate('Add');
-  //loadRouteProfile = () => this.props.navigation.navigate('Profile');
-  //const ticker = getPriceFromApi()
-  //console.log(ticker)
-  
-    const arr = [{title: 'Test', name: 'GOOG', price: '23',image: googleImage},{title: 'Test', name: 'AAPPL', price: '22',image: appleImage}]
-          return (
-				<Container>
-          <HeaderWithPL headingStyle={styles.heading} title="$200,00" loss = "-$20 200%"/>
-          {arr.map((item) => (<StockBox name={item.name} price={item.price} image={item.image}/>))}
-
-          <View style={styles.buttonBox}>
-							<NavButton 
-								color="#black"
-                source={homeImage}
-								onPress={() => navigation.navigate('Favorites')}
-              />
-              <NavButton 
-								color="#black"
-                source={favoriteImage} 
-								onPress={this.loadRouteFavorites}
-              />
-              <NavButton 
-								color="#black"
-                source={addImage} 
-								onPress={this.loadRouteAdd}
-              />
-              <NavButton 
-								color="#black"
-                source={marketImage} 
-								onPress={this.loadRouteProfile}
-              />
-                            <NavButton 
-								color="black"
-                source={userImage} 
-								onPress={this.loadRouteProfile}
-              />
-						</View>
-				</Container>
-          )
-      }
-
-*/
 const styles = StyleSheet.create({
     container: {
 		flex: 1,
 		justifyContent: 'flex-start',
-		backgroundColor: 'lightgrey',
-	},
+		backgroundColor: '#0C0228',
+    },
+    buttonBox: {
+        flex: 1,
+        paddingTop: 80,
+        flexDirection: 'row',
+        width: 150,
+        alignItems: 'center',
+        justifyContent: 'flex-start',
+        },
     heading: {
 		//flex: 0,
 		alignItems: 'center',
 		margin: 5,
 		padding: 100,
 		backgroundColor: '#1D519C',
-  },
-  buttonBox: {
-    flex: 1,
-    paddingTop: 80,
-    flexDirection: 'row',
-    width: 150,
-    alignItems: 'center',
-    justifyContent: 'flex-start',
     },
-button: {
-paddingTop: 50,
-width: 80,
-height: 20,
-},
+    button: {
+        paddingTop: 50,
+        width: 80,
+        height: 20,
+        },
 })
-export default HomeScreen;

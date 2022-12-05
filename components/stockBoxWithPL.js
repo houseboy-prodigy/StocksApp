@@ -1,27 +1,7 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
-import Swipeable from 'react-native-gesture-handler/Swipeable';
+import { Button, StyleSheet, Text, View, Image} from 'react-native';
 // main content and structure - e.g. text, image &c.
-import favoritesImage from '../assets/favorites.png'
-import database from '@react-native-firebase/database';
-class StockBoxWithFav extends Component {
-
-  writeIDtoDB = (name, value) => {
-    try {
-        const path = 'UserFavorites/' + '' + name
-        database()
-            .ref(path)
-            .set({
-                name: name,
-                value: value,
-        }).then(() => console.log('Data set.'));
-
-    } catch (error) {
-        console.log(error.toString())
-    }
- }
-
-
+class StockBoxWithPL extends Component {
 	render() {
 		return (
       <View style={styles.stockContainer}>
@@ -32,10 +12,11 @@ class StockBoxWithFav extends Component {
       <Text style={styles.para}>
         {this.props.price}
       </Text>
-      <TouchableOpacity onPress={()=>this.writeIDtoDB(this.props.name,this.props.price)}>
-      <Image style={styles.logo} source={favoritesImage} />
-  </TouchableOpacity>    
-  </View>
+      <Text style={styles.para2}>
+      {console.log(this.props.pl)}
+      {this.props.pl}
+    </Text>
+    </View>
 		);
 	}
 }
@@ -57,9 +38,9 @@ const styles = StyleSheet.create({
       },
       para: {
         margin: 10,
-        marginTop: 20,
-        marginLeft: 100,
-        fontSize: 14,
+        marginTop: 0,
+        marginLeft: 200,
+        fontSize: 20,
         fontWeight: 'bold',
         textAlign: 'right',
       },
@@ -70,5 +51,9 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'left',
       },
+      para2 :{
+        marginTop:30,
+        marginRight: 50
+      }
     });
-export default StockBoxWithFav;
+export default StockBoxWithPL;

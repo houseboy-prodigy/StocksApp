@@ -182,23 +182,6 @@ function MyTabs() {
     }}
   />
   <Tab.Screen
-  name="Favorites"
-  component={FavoritesScreen}
-  options={{
-    tabBarIcon: ({ focused }) => {
-      return (
-        <View>
-          <Image
-            source={favoriteImage}
-            resizeMode="contain"
-            style={{ width: 25 }}
-          />
-        </View>
-      );
-    },
-  }}
-/>
-<Tab.Screen
 name="Add"
 component={AddScreen}
 options={{
@@ -214,6 +197,23 @@ options={{
     );
   },
 }}
+/>
+  <Tab.Screen
+  name="Favorites"
+  component={FavoritesScreen}
+  options={{
+    tabBarIcon: ({ focused }) => {
+      return (
+        <View>
+          <Image
+            source={favoriteImage}
+            resizeMode="contain"
+            style={{ width: 25 }}
+          />
+        </View>
+      );
+    },
+  }}
 />
 <Tab.Screen
 name="Search"

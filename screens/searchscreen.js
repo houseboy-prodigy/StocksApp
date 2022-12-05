@@ -25,6 +25,7 @@ class SearchScreen extends Component {
       this.state = {
         searchInput: "",
         searchResult: null,
+        searchResultName: null,
         error: "",
         isLoading: false
       };
@@ -49,20 +50,44 @@ class SearchScreen extends Component {
         .catch(error => this.setState({ error }));
     };
 
+    searchStockName = async () => {
+      this.setState({
+        isLoading: true
+      });
+      const url = `https://api.polygon.io/v3/reference/tickers/${this.state.searchInput}?apiKey=${this.ApiKey}`;
+      await fetch(url)
+        .then(res => res.json())
+        .then(responseJson =>
+          this.setState({
+            isLoading: true,
+            searchResultName: {
+              sname: responseJson.results.name
+            }
+          })
+        )
+        .catch(error => this.setState({ error }));
+    };
+
     searchAgain = () => {
       this.setState({
         searchInput: "",
         searchResult: null,
+        searchResultName: null,
         error: "",
         isLoading: false
       });
     }
 
+    searchAll = () => {
+      this.searchStockName();
+      this.searchStock();
+    }
+
     render() {
         
-        const { searchInput, searchResult, error, isLoading } = this.state;
+        const { searchInput, searchResult, searchResultName, error, isLoading } = this.state;
         
-        if (searchResult && isLoading) {
+        if (searchResult && searchResultName) {
           return (
             
             <Container>
@@ -97,7 +122,7 @@ class SearchScreen extends Component {
                   onChangeText={searchInput => {
                     this.setState({ searchInput });
                   }}
-                  onSubmitEditing={this.searchStock}
+                  onSubmitEditing={this.searchAll}
                   value={searchInput}
                 />
             </View>

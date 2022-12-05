@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
       para: {
         margin: 10,
         marginTop: 20,
-        marginLeft: 200,
+        marginLeft: 100,
         fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'right',

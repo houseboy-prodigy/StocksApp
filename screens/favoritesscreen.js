@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
+import { Button, StyleSheet, Text, View, Image,TouchableOpacity,  SafeAreaView, ScrollView} from 'react-native';
 import HeaderWithPL from '../components/HeaderWithPL'
 import NavBar from '../components/NavBar'
 import appleImage from '../assets/apple.png'
@@ -29,7 +29,7 @@ export default function FavoritesScreen() {
       const favarr = [];
       const res = 
       database()
-      .ref('testData')
+      .ref('UserFavorites')
       .on('value', snapshot => {
       let data = snapshot.val() || {};
       objectDict = {...data};
@@ -45,12 +45,14 @@ export default function FavoritesScreen() {
       })
     }, []);
     return (
-        <Container>
+      <SafeAreaView style={styles.container}>
+      <ScrollView>
               <View>
               <Header headingStyle={styles.heading} title="Favorites"/>
               {data.map((item) => (<StockBox name={item.name} price={item.price} image={require('../assets/home.png')}/>))}
               </View>
-            </Container>
+              </ScrollView>
+            </SafeAreaView>
     )
     }
 
@@ -58,7 +60,7 @@ const styles = StyleSheet.create({
     container: {
 		flex: 1,
 		justifyContent: 'flex-start',
-		backgroundColor: 'lightgrey',
+		backgroundColor: '#0C0228',
     },
     buttonBox: {
         flex: 1,
