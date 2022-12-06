@@ -49,7 +49,7 @@ export default function FavoritesScreen() {
       <SafeAreaView style={styles.container}>
       <ScrollView>
               <View>
-              <Header headingStyle={styles.heading} headingStyleL={styles.ba} title="Favorites"/>
+              <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Favorites"/>
               {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
               </View>
               </ScrollView>

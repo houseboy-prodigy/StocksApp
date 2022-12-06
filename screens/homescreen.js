@@ -52,7 +52,7 @@ export default function HomeScreen() {
       favarr.length = 0
       Object.entries(objectDict).forEach(([key, value]) => {
           //console.log(value)
-          //searchStockPrice(value.name)
+          searchStockPrice(value.name)
           pl+= 10 * parseInt(value.quant)
           let tempObj = {name: value.name, price: value.cost.toFixed(2)}
           total += value.cost
@@ -72,7 +72,7 @@ export default function HomeScreen() {
       <SafeAreaView style={styles.container}>
       <ScrollView>
               <View>
-              <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} loss = {`$${profitloss}`}/>
+              <HeaderWithPL headingStyle={styles.heading} headingStyleL={styles.background} title={`$${total}`} loss = {`$${profitloss}`}/>
               {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
               </View>
               </ScrollView>
@@ -85,7 +85,7 @@ export default function HomeScreen() {
         <SafeAreaView style={styles.container}>
         <ScrollView>
                 <View>
-                <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} profit = {`$${profitloss}`}/>
+                <HeaderWithPL headingStyle={styles.heading} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
                 {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
                 </View>
                 </ScrollView>
@@ -115,6 +115,13 @@ const styles = StyleSheet.create({
     backgroundColor: 'black',
     
     },
+    background: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      height: 300,
+      },
     button: {
         paddingTop: 50,
         width: 80,

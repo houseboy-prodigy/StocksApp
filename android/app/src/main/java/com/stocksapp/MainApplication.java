@@ -12,6 +12,11 @@ import com.facebook.soloader.SoLoader;
 import com.stocksapp.newarchitecture.MainApplicationReactNativeHost;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+// ...
+
+import com.BV.LinearGradient.LinearGradientPackage; // <--- This!
+
+// ...
 
 public class MainApplication extends Application implements ReactApplication {
 
@@ -27,9 +32,13 @@ public class MainApplication extends Application implements ReactApplication {
           @SuppressWarnings("UnnecessaryLocalVariable")
           List<ReactPackage> packages = new PackageList(this).getPackages();
           // Packages that cannot be autolinked yet can be added manually here, for example:
+          //packages.add(new MainReactPackage());
+          packages.add(new LinearGradientPackage());
+          
           // packages.add(new MyReactNativePackage());
           return packages;
         }
+
 
         @Override
         protected String getJSMainModuleName() {
@@ -39,6 +48,8 @@ public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mNewArchitectureNativeHost =
       new MainApplicationReactNativeHost(this);
+
+
 
   @Override
   public ReactNativeHost getReactNativeHost() {

@@ -1,6 +1,7 @@
 // header content and structure
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View, Image} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
 
 class ContentText extends Component {
 	render() {
@@ -26,6 +27,11 @@ class HeaderWithPL extends Component {
 	render() {
 		return (
 			<View style={this.props.headingStyle}>
+			<LinearGradient
+			// Background Linear Gradient
+			colors={['transparent','#F53844']}
+			style={this.props.headingStyleL}
+		  />
 				<ContentText textStyle={styles.headingText}>
 					{this.props.title}
 				</ContentText>

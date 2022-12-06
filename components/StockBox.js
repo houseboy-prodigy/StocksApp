@@ -1,10 +1,18 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View, Image} from 'react-native';
+import LinearGradient from 'react-native-linear-gradient';
+
 // main content and structure - e.g. text, image &c.
 class StockBox extends Component {
 	render() {
 		return (
       <View style={styles.stockContainer}>
+      <LinearGradient
+			// Background Linear Gradient
+      //colors={['transparent','#F53844']}
+      colors={['transparent','#20BF55']}
+			style={styles.background}
+		  />
       <Image style={styles.logo} source={this.props.image} />
       <Text style={styles.paragraph}>
         {this.props.name}
@@ -27,6 +35,7 @@ const styles = StyleSheet.create({
         borderTopColor: 'lightgrey',
         borderBottomColor: '#7B7B7B',
         //bottombordercolor:'3px solid red',
+        borderRadius: 10,
         padding: 10,
       },  
       logo: {
@@ -34,6 +43,13 @@ const styles = StyleSheet.create({
         height: 50,
         width: 50,
       },
+      background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: 300,
+        },
       para: {
         margin: 10,
         marginTop: 20,

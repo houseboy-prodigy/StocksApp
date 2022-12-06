@@ -161,16 +161,18 @@ function MyTabs() {
   return (
     <Tab.Navigator
   initialRouteName="Home"
-      tabBarOptions={{
-         activeTintColor: '#fff',
-         inactiveTintColor: 'lightgray',
-         activeBackgroundColor: 'black',
-         inactiveBackgroundColor: 'black',
-             style: {
-                   backgroundColor: '#CE4418',
-                   paddingBottom: 3
-             }
-      }}>
+  screenOptions={{
+    "tabBarActiveTintColor": "#fff",
+    "tabBarInactiveTintColor": "lightgray",
+    "tabBarActiveBackgroundColor": "black",
+    "tabBarInactiveBackgroundColor": "black",
+    "tabBarStyle": [
+      {
+        "display": "flex"
+      },
+      null
+    ]
+  }}>
     <Tab.Screen
     name="Home"
     component={HomeScreen}
