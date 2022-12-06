@@ -23,7 +23,7 @@ var objectDict = {}
 
 export default function HomeScreen() {
     
-    const [data1, setData] = useState([]);
+    const [data, setData] = useState([]);
     const [total,setTotal] = useState();
     const [currPrice,setCurrPrice] = useState();
     const [profitloss,setProfitLoss] = useState();
@@ -34,8 +34,7 @@ export default function HomeScreen() {
         const url = `https://api.polygon.io/v2/aggs/ticker/${name}/range/1/day/2021-07-22/2021-07-22?adjusted=true&sort=asc&limit=120&apiKey=g14DIhw20yIUFfTGwdYPz0UGT8SIwODp`;
         await fetch(url)
           .then(res => res.json())
-          .then(responseJson =>
-            
+          .then(responseJson => 
             setCurrPrice(responseJson.results[0].o)
       )
           .catch(error => this.setState({ error }));
@@ -55,7 +54,7 @@ export default function HomeScreen() {
           //console.log(value)
           //searchStockPrice(value.name)
           pl+= 10 * parseInt(value.quant)
-          let tempObj = {name: value.name, price: value.cost}
+          let tempObj = {name: value.name, price: value.cost.toFixed(2)}
           total += value.cost
           favarr.push(tempObj)
          })
@@ -74,7 +73,7 @@ export default function HomeScreen() {
       <ScrollView>
               <View>
               <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} loss = {`$${profitloss}`}/>
-              {data.map((item) => (<StockBox name={item.name} price={item.price} image={require('../assets/home.png')}/>))}
+              {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
               </View>
               </ScrollView>
             </SafeAreaView>
@@ -87,7 +86,7 @@ export default function HomeScreen() {
         <ScrollView>
                 <View>
                 <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} profit = {`$${profitloss}`}/>
-                {data1.map((item) => (<StockBox name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+                {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
                 </View>
                 </ScrollView>
               </SafeAreaView>
@@ -112,7 +111,7 @@ const styles = StyleSheet.create({
 		//flex: 0,
 		alignItems: 'center',
 		margin: 5,
-		padding: 100,
+		padding: 75,
 		backgroundColor: '#1D519C',
     },
     button: {

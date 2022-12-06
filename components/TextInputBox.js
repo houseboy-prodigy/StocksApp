@@ -9,6 +9,8 @@ class TextInputBox extends Component {
           placeholder={this.props.placeholder}
           style={styles.inputStyle}
           value={this.props.value}
+          onChangeText={this.props.onChangeText}
+          onSubmitEditing={this.props.onSubmitEditing}
         />
     </View>
     );

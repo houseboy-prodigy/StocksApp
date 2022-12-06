@@ -17,7 +17,7 @@ import { route } from '@react-navigation/native';
 import Container from '../components/Container'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 // container for screen content and components
-
+import * as All  from '../assets/'
 
 var objectDict = {}
 
@@ -34,6 +34,7 @@ export default function FavoritesScreen() {
       let data = snapshot.val() || {};
       objectDict = {...data};
       //console.log(objectDict)
+      favarr.length = 0
       Object.entries(objectDict).forEach(([key, value]) => {
           //console.log(value)
           let tempObj = {name: value.name, price: value.value}
@@ -49,7 +50,7 @@ export default function FavoritesScreen() {
       <ScrollView>
               <View>
               <Header headingStyle={styles.heading} title="Favorites"/>
-              {data.map((item) => (<StockBox name={item.name} price={item.price} image={require('../assets/home.png')}/>))}
+              {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
               </View>
               </ScrollView>
             </SafeAreaView>

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image,TouchableOpacity, TextInput, ScrollView} from 'react-native';
+import { Button, StyleSheet, Text, View, Image,TouchableOpacity, TextInput, ScrollView, Alert} from 'react-native';
 import Header from '../components/Header'
 import NavBar from '../components/NavBar'
 import appleImage from '../assets/apple.png'

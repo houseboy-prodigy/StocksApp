@@ -35,10 +35,11 @@ const styles = StyleSheet.create({
       para: {
         margin: 10,
         marginTop: 20,
-        marginLeft: 100,
+        marginLeft: 'auto',
         fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'right',
+        color: 'black'
       },
         paragraph: {
         margin: 10,
@@ -46,6 +47,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'left',
+        color: 'black'
       },
     });
 export default StockBox;

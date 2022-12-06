@@ -1,11 +1,17 @@
-import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import React, { Component,useState } from 'react';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity, Alert} from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 // main content and structure - e.g. text, image &c.
-import favoritesImage from '../assets/favorites.png'
+import favoritesImage from '../assets/fav.png'
 import database from '@react-native-firebase/database';
-class StockBoxWithFav extends Component {
 
+
+
+
+
+
+class StockBoxWithFav extends Component {
+  
   writeIDtoDB = (name, value) => {
     try {
         const path = 'UserFavorites/' + '' + name
@@ -14,7 +20,9 @@ class StockBoxWithFav extends Component {
             .set({
                 name: name,
                 value: value,
-        }).then(() => console.log('Data set.'));
+        }).then(() => Alert.alert("Added to Favorites")
+        
+        );
 
     } catch (error) {
         console.log(error.toString())
@@ -51,21 +59,23 @@ const styles = StyleSheet.create({
         padding: 10,
       },  
       logo: {
-        marginLeft:0,
+        
         height: 50,
         width: 50,
       },
       para: {
         margin: 10,
         marginTop: 20,
-        marginLeft: 100,
+        marginLeft: 'auto',
         fontSize: 14,
+        color: 'black',
         fontWeight: 'bold',
         textAlign: 'right',
       },
         paragraph: {
-        margin: 10,
+        
         marginTop: 20,
+        color: 'black',
         fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'left',
