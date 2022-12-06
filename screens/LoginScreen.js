@@ -5,7 +5,7 @@ import * as firebase from 'firebase/app';
 // import { firebase } from '../firebase/config'
 import auth from '@react-native-firebase/auth';
 import {Button, Content, Header, Form, Input, Item, Label, Container} from 'native-base';
-
+import Headers from '../components/Header'
 class LoginScreen extends React.Component {
     constructor(props) {
       super(props)
@@ -83,7 +83,8 @@ class LoginScreen extends React.Component {
     render() {
       return (  
       <Container style={styles.container}>
-        <Text style={styles.header}>StocksApp</Text>
+      <Headers headingStyle={styles.heading} title="Login"/>
+        
           <Form>
             <Item floatingLabel>
               <Label style={ {color: 'white'} }>E-Mail</Label>
@@ -137,7 +138,13 @@ const styles = StyleSheet.create({
       justifyContent: 'center',
       padding: 10
     },
-  
+    heading: {
+      //flex: 0,
+      alignItems: 'center',
+      margin: 5,
+      padding: 100,
+      backgroundColor: 'black',
+      },
     header: {
       color: 'white',
       fontSize: 40,

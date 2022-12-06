@@ -1,5 +1,5 @@
 import React, { Component, useEffect, useState } from 'react';
-import { Button, StyleSheet, Text, View, Image,TouchableOpacity,  SafeAreaView, ScrollView} from 'react-native';
+import { Button, StyleSheet, Text, View, Image,TouchableOpacity,SafeAreaView, ScrollView} from 'react-native';
 import HeaderWithPL from '../components/HeaderWithPL'
 import NavBar from '../components/NavBar'
 import appleImage from '../assets/apple.png'
@@ -49,7 +49,7 @@ export default function FavoritesScreen() {
       <SafeAreaView style={styles.container}>
       <ScrollView>
               <View>
-              <Header headingStyle={styles.heading} title="Favorites"/>
+              <Header headingStyle={styles.heading} headingStyleL={styles.ba} title="Favorites"/>
               {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
               </View>
               </ScrollView>
@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     container: {
 		flex: 1,
 		justifyContent: 'flex-start',
-		backgroundColor: '#0C0228',
+		backgroundColor: 'black',
     },
     buttonBox: {
         flex: 1,
@@ -76,8 +76,15 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 5,
 		padding: 100,
-		backgroundColor: '#1D519C',
+		backgroundColor: 'black',
     },
+    background: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      height: 300,
+      },
     button: {
         paddingTop: 50,
         width: 80,

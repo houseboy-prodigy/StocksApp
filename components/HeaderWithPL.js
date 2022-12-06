@@ -45,7 +45,9 @@ const styles = StyleSheet.create({
     container: {
 		flex: 1,
 		justifyContent: 'flex-start',
-		backgroundColor: 'lightgrey',
+		backgroundColor: 'black',
+		borderBottomColor: 'white'
+
 	},
 	headingText: {
 		color: '#FFFFFF',

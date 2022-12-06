@@ -16,16 +16,17 @@ import NavBar from './components/NavBar'
 import appleImage from './assets/apple.png'
 import googleImage from './assets/google.png'
 import StockBox from './components/StockBox'
-import homeImage from './assets/home.png'
+import homeImage from './assets/Home_Icon.png'
 import userImage from './assets/user.png'
-import addImage from './assets/add.png'
-import favoriteImage from './assets/favorites.png'
+import addImage from './assets/addbutton.png'
+import favoriteImage from './assets/hearts.png'
+import profileImage from './assets/profile.png'
 import marketImage from './assets/chart.png'
-import searchImage from './assets/search.png'
+import searchImage from './assets/Search_Icon.png'
 import HomeScreen from './screens/homescreen'
 import FavoritesScreen from './screens/favoritesscreen'
 import SearchScreen from './screens/searchscreen'
-import ProfileScreen from './screens/profilescreen'
+import profileScreen from './assets/profile.png'
 import { firebaseConfig } from './firebase-key/config'
 //  import { firebase } from './firebase/config'
 //  import * as firebase from 'firebase/app';
@@ -159,11 +160,17 @@ const Tab = createBottomTabNavigator();
 function MyTabs() {
   return (
     <Tab.Navigator
-      initialRouteName="Home"
-      screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
-      }}
-    >
+  initialRouteName="Home"
+      tabBarOptions={{
+         activeTintColor: '#fff',
+         inactiveTintColor: 'lightgray',
+         activeBackgroundColor: 'black',
+         inactiveBackgroundColor: 'black',
+             style: {
+                   backgroundColor: '#CE4418',
+                   paddingBottom: 3
+             }
+      }}>
     <Tab.Screen
     name="Home"
     component={HomeScreen}
@@ -240,7 +247,7 @@ options={{
     return (
       <View>
         <Image
-          source={favoriteImage}
+          source={profileImage}
           resizeMode="contain"
           style={{ width: 25 }}
         />

@@ -97,7 +97,7 @@ const styles = StyleSheet.create({
     container: {
 		flex: 1,
 		justifyContent: 'flex-start',
-		backgroundColor: '#0C0228',
+		backgroundColor: 'black',
     },
     buttonBox: {
         flex: 1,
@@ -112,7 +112,8 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 5,
 		padding: 75,
-		backgroundColor: '#1D519C',
+    backgroundColor: 'black',
+    
     },
     button: {
         paddingTop: 50,

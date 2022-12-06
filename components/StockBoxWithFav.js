@@ -3,15 +3,17 @@ import { Button, StyleSheet, Text, View, Image, TouchableOpacity, Alert} from 'r
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 // main content and structure - e.g. text, image &c.
 import favoritesImage from '../assets/fav.png'
+import favoritesImage2 from '../assets/redfav.png'
 import database from '@react-native-firebase/database';
 
 
 
-
-
-
-class StockBoxWithFav extends Component {
-  
+export default function StockBoxWithFav(props){
+  const[alternateImage, setAlternateImage] = useState(true);
+  const changeImage = () => {
+    console.log('here in changeimage')
+    setAlternateImage(alternateImage => !alternateImage);
+  }
   writeIDtoDB = (name, value) => {
     try {
         const path = 'UserFavorites/' + '' + name
@@ -20,7 +22,7 @@ class StockBoxWithFav extends Component {
             .set({
                 name: name,
                 value: value,
-        }).then(() => Alert.alert("Added to Favorites")
+        }).then(() => console.log('here in write')
         
         );
 
@@ -28,25 +30,29 @@ class StockBoxWithFav extends Component {
         console.log(error.toString())
     }
  }
+ FavoriteActions = () => {
+  writeIDtoDB(props.name,props.price);
+  changeImage();
+}
 
-
-	render() {
 		return (
       <View style={styles.stockContainer}>
-      <Image style={styles.logo} source={this.props.image} />
+      <Image style={styles.logo} source={props.image} />
       <Text style={styles.paragraph}>
-        {this.props.name}
+        {props.name}
       </Text>
       <Text style={styles.para}>
-        {this.props.price}
+        {props.price}
       </Text>
-      <TouchableOpacity onPress={()=>this.writeIDtoDB(this.props.name,this.props.price)}>
-      <Image style={styles.logo} source={favoritesImage} />
+      <TouchableOpacity onPress={FavoriteActions}>
+      {alternateImage && <Image style={styles.logo} source={favoritesImage} />}
+        {!alternateImage && <Image style={styles.logo} source={favoritesImage2} />}
+      
   </TouchableOpacity>    
   </View>
 		);
 	}
-}
+
 
 const styles = StyleSheet.create({
     stockContainer: {
@@ -81,4 +87,3 @@ const styles = StyleSheet.create({
         textAlign: 'left',
       },
     });
-export default StockBoxWithFav;

@@ -22,9 +22,11 @@ const styles = StyleSheet.create({
         //flex: 1,
         flexDirection: 'row',
         //alignItems: 'left',
-        backgroundColor: '#D9D9D9',
-        borderWidth:1,
-        bottomborder:'3px solid black',
+        backgroundColor: 'black',
+        borderWidth:0.5,
+        borderTopColor: 'lightgrey',
+        borderBottomColor: '#7B7B7B',
+        //bottombordercolor:'3px solid red',
         padding: 10,
       },  
       logo: {
@@ -39,7 +41,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'right',
-        color: 'black'
+        color: 'white'
       },
         paragraph: {
         margin: 10,
@@ -47,7 +49,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         fontWeight: 'bold',
         textAlign: 'left',
-        color: 'black'
+        color: 'white'
       },
     });
 export default StockBox;

@@ -14,7 +14,7 @@ import marketImage from '../assets/chart.png'
 import { useNavigation } from '@react-navigation/native';
 import Container from '../components/Container'
 import StockBoxFav from '../components/StockBoxWithFav'
-
+import * as All  from '../assets/'
 // container for screen content and components
 
 class SearchScreen extends Component {
@@ -95,6 +95,7 @@ class SearchScreen extends Component {
               <Header headingStyle={styles.heading} title="Search Results"/>
               <StockBoxFav name={searchResult.name}
               price={searchResult.price}
+              image={All[`${searchResult.name}`]}
               />
               <Button
   onPress={this.searchAgain}
@@ -144,7 +145,7 @@ const styles = StyleSheet.create({
             alignItems: 'center',
             margin: 5,
             padding: 100,
-            backgroundColor: '#1D519C',
+            backgroundColor: 'black',
       },
       buttonBox: {
         flex: 1,

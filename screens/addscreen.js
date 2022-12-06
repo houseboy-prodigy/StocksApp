@@ -176,7 +176,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 5,
 		padding: 100,
-		backgroundColor: '#1D519C',
+		backgroundColor: 'black',
   },
   buttonBox: {
     flex: 1,
