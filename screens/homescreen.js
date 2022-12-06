@@ -2,8 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, View, Image,TouchableOpacity,  SafeAreaView, ScrollView} from 'react-native';
 import HeaderWithPL from '../components/HeaderWithPL'
 import NavBar from '../components/NavBar'
-import appleImage from '../assets/apple.png'
-import googleImage from '../assets/google.png'
+
 import StockBox from '../components/StockBox'
 import getPriceFromApi from '../components/ApiCall'
 import Header from '../components/Header'
@@ -17,15 +16,30 @@ import { route } from '@react-navigation/native';
 import Container from '../components/Container'
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 // container for screen content and components
-
+import * as All  from '../assets/'
 
 var objectDict = {}
-
+ 
 
 export default function HomeScreen() {
-    const [data, setData] = useState([]);
+    
+    const [data1, setData] = useState([]);
     const [total,setTotal] = useState();
+    const [currPrice,setCurrPrice] = useState();
+    const [profitloss,setProfitLoss] = useState();
     useEffect(() => {
+
+      async function searchStockPrice(name) {
+        console.log(name)
+        const url = `https://api.polygon.io/v2/aggs/ticker/${name}/range/1/day/2021-07-22/2021-07-22?adjusted=true&sort=asc&limit=120&apiKey=g14DIhw20yIUFfTGwdYPz0UGT8SIwODp`;
+        await fetch(url)
+          .then(res => res.json())
+          .then(responseJson =>
+            
+            setCurrPrice(responseJson.results[0].o)
+      )
+          .catch(error => this.setState({ error }));
+      }
       const favarr = [];
       const res = 
       database()
@@ -33,32 +47,53 @@ export default function HomeScreen() {
       .on('value', snapshot => {
       let data = snapshot.val() || {};
       objectDict = {...data};
-      //console.log(objectDict)
+      console.log(objectDict)
       let total = 0
+      let pl = 0
+      favarr.length = 0
       Object.entries(objectDict).forEach(([key, value]) => {
           //console.log(value)
+          //searchStockPrice(value.name)
+          pl+= 10 * parseInt(value.quant)
           let tempObj = {name: value.name, price: value.cost}
           total += value.cost
           favarr.push(tempObj)
          })
+      console.log(`finalpl: ${pl}`)
       //console.log(favarr)
       setData(favarr)
-      setTotal(total)
+      setTotal(total.toFixed(2))
+      setProfitLoss(pl)
       // this.setState({...arr})
       })
     }, []);
+    if(profitloss > 200){
     return (
+      
       <SafeAreaView style={styles.container}>
       <ScrollView>
               <View>
-              <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} loss = "-$20 200%"/>
+              <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} loss = {`$${profitloss}`}/>
               {data.map((item) => (<StockBox name={item.name} price={item.price} image={require('../assets/home.png')}/>))}
               </View>
               </ScrollView>
             </SafeAreaView>
-    )
+    );
     }
-
+    else{
+      return (
+      
+        <SafeAreaView style={styles.container}>
+        <ScrollView>
+                <View>
+                <HeaderWithPL headingStyle={styles.heading} title={`$${total}`} profit = {`$${profitloss}`}/>
+                {data1.map((item) => (<StockBox name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+                </View>
+                </ScrollView>
+              </SafeAreaView>
+      );
+    }
+  }
 const styles = StyleSheet.create({
     container: {
 		flex: 1,
