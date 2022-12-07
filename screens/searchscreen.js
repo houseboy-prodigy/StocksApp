@@ -104,7 +104,7 @@ class SearchScreen extends Component {
     }
 
     searchAll = () => {
-      this.queryStock(this.state.searchInput);
+      //this.queryStock(this.state.searchInput);
       this.searchStock();
       this.searchStockName();
       
@@ -115,16 +115,13 @@ class SearchScreen extends Component {
         const { searchInput, searchResult, searchResultName, error, isLoading,isFound } = this.state;
         
         if (searchResult && searchResultName) {
-          if(isFound){
-            return (
-            
+        return(
               <Container>
                 <View>
                 <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Results"/>
                 <StockBoxFav name={searchResult.name}
                 price={searchResult?.price}
                 image={All[`${searchResult.name}`]}
-                favImage={favoritesImage2}
                 />
                 <Button
     onPress={this.searchAgain}
@@ -137,34 +134,8 @@ class SearchScreen extends Component {
                 
               </Container>
               
-            );
-          }
-          else{
-            return (
-            
-              <Container>
-                <View>
-                <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Results"/>
-                <StockBoxFav name={searchResult.name}
-                price={searchResult.price}
-                image={All[`${searchResult.name}`]}
-                favImage={favoritesImage}
-                />
-                <Button
-    onPress={this.searchAgain}
-    title="Search Again"
-    color="#1D519C"
-  
-    accessibilityLabel="Learn more about this purple button"
-  />
-                </View>
-                
-              </Container>
-              
-            );
-          }
-
-        } else {
+            );}
+          else {
           return (
             <Container>
             <View>
