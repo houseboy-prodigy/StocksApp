@@ -26,7 +26,7 @@ import searchImage from './assets/Search_Icon.png'
 import HomeScreen from './screens/homescreen'
 import FavoritesScreen from './screens/favoritesscreen'
 import SearchScreen from './screens/searchscreen'
-import profileScreen from './assets/profile.png'
+import profileScreen from './screens/profilescreen'
 import { firebaseConfig } from './firebase-key/config'
 //  import { firebase } from './firebase/config'
 //  import * as firebase from 'firebase/app';
@@ -34,6 +34,7 @@ import firebase from '@react-native-firebase/app';
 import LoginScreen from './screens/LoginScreen';
 import AddScreen from './screens/addscreen'
 import readSuccessScreen from './screens/readSuccess'
+import data from './Local-data/local.json'
 const Stack = createNativeStackNavigator();
 // container for screen content and components
 /*Home screen Code*/
@@ -243,7 +244,7 @@ options={{
 />
 <Tab.Screen
 name="Profile"
-component={LoginScreen}
+component={profileScreen}
 options={{
   tabBarIcon: ({ focused }) => {
     return (
@@ -257,7 +258,7 @@ options={{
     );
   },
 }}
-/>
+/> 
     </Tab.Navigator>
   );
 }
@@ -269,11 +270,30 @@ if (!firebase.apps.length) {
   firebase.app();
 }
 
+
+///////////////////////////////////////////////////////////////////////
+
 class App extends Component {
+  constructor(props) {
+      super(props)
+      this.changeLoggingState = this.changeLoggingState.bind(this)
+      this.state = ({
+        loggingStatus: data.isLoggedIn
+      })
+    }
+
+    changeLoggingState(){
+      this.setState({loggingStatus: true})
+    }
+  
 	render() {
 		return (
-      <NavigationContainer>
-      <MyTabs />
+      <NavigationContainer> 
+        {
+          this.state.loggingStatus ? (<MyTabs />) : (
+           <LoginScreen onStatusChange={this.changeLoggingState}/>
+            )
+        }
 			</NavigationContainer>
     );
    }
@@ -301,15 +321,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
     },
-button: {
-paddingTop: 50,
-width: 80,
-height: 20,
-},
-headingText: {
-  color: '#FFFFFF',
-  fontSize: 40,
-},
+  button: {
+  paddingTop: 50,
+  width: 80,
+  height: 20,
+  },
+  headingText: {
+    color: '#FFFFFF',
+    fontSize: 40,
+  },
 });
 
 export default App;

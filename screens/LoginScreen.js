@@ -6,14 +6,22 @@ import * as firebase from 'firebase/app';
 import auth from '@react-native-firebase/auth';
 import {Button, Content, Header, Form, Input, Item, Label, Container} from 'native-base';
 import Headers from '../components/Header'
+
+
+
 class LoginScreen extends React.Component {
     constructor(props) {
       super(props)
-  
+      this.handleStatusChange=this.handleStatusChange.bind(this)
       this.state = ({
         email: '',
         password: ''
       })
+    }
+
+    handleStatusChange = () =>{
+      this.props.onStatusChange()
+      console.log("yo")
     }
 
     writeUserData = (email) => {
@@ -31,7 +39,7 @@ class LoginScreen extends React.Component {
       }
     }
     
-    signUpUser = (email, password, navigate) =>{
+    signUpUser = (email, password) =>{
         
       try {
         
@@ -41,9 +49,10 @@ class LoginScreen extends React.Component {
         }
         else {
             
-          auth().createUserWithEmailAndPassword(email, password).then(function(user) {  //////
+          auth().createUserWithEmailAndPassword(email, password).then((user) => {  //////
             console.log(user);
-            navigate('Home')
+            // navigate('Home')
+            this.handleStatusChange()
             })
           
           var email2 = email.replace(".","");
@@ -55,17 +64,19 @@ class LoginScreen extends React.Component {
       }
     }
   
-    loginUser = (email, password, navigate) => {
+    loginUser = (email, password) => {
       try {
-        auth().signInWithEmailAndPassword(email, password).then(function(user) {  //////
+        auth().signInWithEmailAndPassword(email, password).then((user) => {  //////
         console.log(user);
-        navigate('Home')
+        this.handleStatusChange()
         })
+      
         
       } catch (error) {
         alert("Could not log in; user or password is wrong")
         console.log(error.toString())
       }
+      
     }
   
     forgotPassword = (email) => {
@@ -107,13 +118,13 @@ class LoginScreen extends React.Component {
             </Item>
             <Button style={{ marginTop: 10 }}
             full rounded success 
-            onPress ={()=> this.loginUser(this.state.email, this.state.password,this.props.navigation.navigate)}
+            onPress ={()=> this.loginUser(this.state.email, this.state.password)}
             >
               <Text style = {{ color: 'white' }}>Log-In</Text>
             </Button>
             <Button style = {{marginTop: 10}}
             full rounded primary 
-            onPress = {()=> this.signUpUser(this.state.email, this.state.password,this.props.navigation.navigate)}
+            onPress = {()=> this.signUpUser(this.state.email, this.state.password)}
             >
               <Text style={{color: 'white'}}>Sign-Up</Text>
             </Button>
