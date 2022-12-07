@@ -29,8 +29,8 @@ class ProfileScreen extends Component {
 	render() {
 		return (
 				<Container>
-					<Header headingStyle={styles.heading} title="Profile" />	
-          <StockBox name= 'Log Out'
+				<Header headingStyle={styles.heading} headingStyleL={styles.background} title="MRKT"/>
+				<StockBox name= 'Log Out'
          price=''
          image={userImage}/>
 				</Container>
@@ -59,7 +59,14 @@ const styles = StyleSheet.create({
 		margin: 5,
 		padding: 100,
 		backgroundColor: '#1D519C',
-    },
+	},
+	background: {
+		position: 'absolute',
+		left: 0,
+		right: 0,
+		top: 0,
+		height: 300,
+	  },
     button: {
         paddingTop: 50,
         width: 80,

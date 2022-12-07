@@ -92,7 +92,7 @@ class SearchScreen extends Component {
             
             <Container>
               <View>
-              <Header headingStyle={styles.heading} title="Search Results"/>
+              <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Results"/>
               <StockBoxFav name={searchResult.name}
               price={searchResult.price}
               image={All[`${searchResult.name}`]}
@@ -113,8 +113,8 @@ class SearchScreen extends Component {
           return (
             <Container>
             <View>
-            <Header headingStyle={styles.heading} title="Search Stock"/>
-                <TextInput
+            <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Stock"/>
+            <TextInput
                 style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
                   placeholder="Find Your Stock.."
                   
@@ -155,6 +155,13 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'flex-start',
         },
+        background: {
+          position: 'absolute',
+          left: 0,
+          right: 0,
+          top: 0,
+          height: 300,
+          },
     button: {
     paddingTop: 50,
     width: 80,

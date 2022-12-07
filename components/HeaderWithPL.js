@@ -57,6 +57,7 @@ const styles = StyleSheet.create({
 	},
 	headingText: {
 		color: '#FFFFFF',
+		fontWeight: 'bold',
 		fontSize: 40,
     },
     subheadingProfitText: {
@@ -64,7 +65,8 @@ const styles = StyleSheet.create({
         fontSize: 24,
       },
       subheadingLossText: {
-        fontSize: 24,
+		fontSize: 30,
+		fontWeight: 'bold',
         color: "red"
       },
 })

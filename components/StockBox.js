@@ -7,12 +7,6 @@ class StockBox extends Component {
 	render() {
 		return (
       <View style={styles.stockContainer}>
-      <LinearGradient
-			// Background Linear Gradient
-      //colors={['transparent','#F53844']}
-      colors={['transparent','#20BF55']}
-			style={styles.background}
-		  />
       <Image style={styles.logo} source={this.props.image} />
       <Text style={styles.paragraph}>
         {this.props.name}

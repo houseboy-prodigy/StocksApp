@@ -74,7 +74,7 @@ render() {
 
         return(
             <Container>
-      <Header headingStyle={styles.heading} title="Add"  />	
+            <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Add"/>
       <TextInput style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2, color: 'black'}}
         placeholder="Name of the Stock"
           value={searchInput}
@@ -115,7 +115,7 @@ render() {
       else{
           return(
               <Container>
-              <Header headingStyle={styles.heading} title="Add"  />	
+              <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Add"/>
               <TextInput style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
         placeholder="Name of the Stock"
         onChangeText={searchInput => {
@@ -178,6 +178,13 @@ const styles = StyleSheet.create({
 		padding: 100,
 		backgroundColor: 'black',
   },
+  background: {
+		position: 'absolute',
+		left: 0,
+		right: 0,
+		top: 0,
+		height: 300,
+	  },
   buttonBox: {
     flex: 1,
     paddingTop: 80,

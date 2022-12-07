@@ -3,7 +3,7 @@ import { Button, StyleSheet, Text, View, Image,TouchableOpacity,  SafeAreaView, 
 import HeaderWithPL from '../components/HeaderWithPL'
 import NavBar from '../components/NavBar'
 
-import StockBox from '../components/StockBox'
+import StockBoxLG from '../components/StockBoxLG'
 import getPriceFromApi from '../components/ApiCall'
 import Header from '../components/Header'
 // import styles from '../Styles/styles'
@@ -22,13 +22,14 @@ var objectDict = {}
  
 
 export default function HomeScreen() {
-    
+
+
     const [data, setData] = useState([]);
     const [total,setTotal] = useState();
     const [currPrice,setCurrPrice] = useState();
     const [profitloss,setProfitLoss] = useState();
     useEffect(() => {
-
+      
       async function searchStockPrice(name) {
         console.log(name)
         const url = `https://api.polygon.io/v2/aggs/ticker/${name}/range/1/day/2021-07-22/2021-07-22?adjusted=true&sort=asc&limit=120&apiKey=g14DIhw20yIUFfTGwdYPz0UGT8SIwODp`;
@@ -53,7 +54,7 @@ export default function HomeScreen() {
       Object.entries(objectDict).forEach(([key, value]) => {
           //console.log(value)
           searchStockPrice(value.name)
-          pl+= 10 * parseInt(value.quant)
+          pl+= 100 * parseInt(value.quant)
           let tempObj = {name: value.name, price: value.cost.toFixed(2)}
           total += value.cost
           favarr.push(tempObj)
@@ -72,8 +73,10 @@ export default function HomeScreen() {
       <SafeAreaView style={styles.container}>
       <ScrollView>
               <View>
-              <HeaderWithPL headingStyle={styles.heading} headingStyleL={styles.background} title={`$${total}`} loss = {`$${profitloss}`}/>
-              {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+              <HeaderWithPL headingStyle={styles.heading} headingStyleL={styles.background} title={`$${total}`} loss = {`-$${profitloss}`}/>
+    
+              {data.map((item,index) => (<StockBoxLG key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+
               </View>
               </ScrollView>
             </SafeAreaView>
@@ -86,7 +89,7 @@ export default function HomeScreen() {
         <ScrollView>
                 <View>
                 <HeaderWithPL headingStyle={styles.heading} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
-                {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+                {data.map((item,index) => (<StockBoxLG key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
                 </View>
                 </ScrollView>
               </SafeAreaView>

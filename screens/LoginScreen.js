@@ -83,7 +83,7 @@ class LoginScreen extends React.Component {
     render() {
       return (  
       <Container style={styles.container}>
-      <Headers headingStyle={styles.heading} title="Login"/>
+      <Headers headingStyle={styles.heading} headingStyleL={styles.background} title="MRKT"/>
         
           <Form>
             <Item floatingLabel>
@@ -145,6 +145,13 @@ const styles = StyleSheet.create({
       padding: 100,
       backgroundColor: 'black',
       },
+      background: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: 0,
+        height: 300,
+        },
     header: {
       color: 'white',
       fontSize: 40,
