@@ -24,7 +24,7 @@ class StockBoxLG extends Component {
 
       <LinearGradient
 			// Background Linear Gradient
-      colors={['transparent','#F53844']}
+      colors={this.props.colors}
       //colors={['transparent','#20BF55']}
 			style={styles.background}
       />

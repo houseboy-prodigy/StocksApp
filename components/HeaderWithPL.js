@@ -29,7 +29,7 @@ class HeaderWithPL extends Component {
 			<View style={this.props.headingStyle}>
 			<LinearGradient
 			// Background Linear Gradient
-			colors={['transparent','#F53844']}
+			colors={this.props.colors}
 			style={this.props.headingStyleL}
 		  />
 				<ContentText textStyle={styles.headingText}>

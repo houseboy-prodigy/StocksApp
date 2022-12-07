@@ -54,7 +54,7 @@ export default function HomeScreen() {
       Object.entries(objectDict).forEach(([key, value]) => {
           //console.log(value)
           searchStockPrice(value.name)
-          pl+= 100 * parseInt(value.quant)
+          pl+= 1 * parseInt(value.quant)
           let tempObj = {name: value.name, price: value.cost.toFixed(2)}
           total += value.cost
           favarr.push(tempObj)
@@ -73,9 +73,9 @@ export default function HomeScreen() {
       <SafeAreaView style={styles.container}>
       <ScrollView>
               <View>
-              <HeaderWithPL headingStyle={styles.heading} headingStyleL={styles.background} title={`$${total}`} loss = {`-$${profitloss}`}/>
+              <HeaderWithPL headingStyle={styles.heading} colors={['transparent','#F53844']} headingStyleL={styles.background} title={`$${total}`} loss = {`-$${profitloss}`}/>
     
-              {data.map((item,index) => (<StockBoxLG key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+              {data.map((item,index) => (<StockBoxLG key={index} colors={['transparent','#F53844']} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
 
               </View>
               </ScrollView>
@@ -88,8 +88,8 @@ export default function HomeScreen() {
         <SafeAreaView style={styles.container}>
         <ScrollView>
                 <View>
-                <HeaderWithPL headingStyle={styles.heading} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
-                {data.map((item,index) => (<StockBoxLG key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+                <HeaderWithPL headingStyle={styles.heading} colors={['transparent','#20BF55']} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
+                {data.map((item,index) => (<StockBoxLG key={index} colors={['transparent','#20BF55']} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
                 </View>
                 </ScrollView>
               </SafeAreaView>

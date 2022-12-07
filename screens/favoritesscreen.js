@@ -24,7 +24,7 @@ var objectDict = {}
 
 export default function FavoritesScreen() {
     const [data, setData] = useState([]);
-    
+    const [total,setTotal] = useState();
     useEffect(() => {
       const favarr = [];
       const res = 
@@ -32,19 +32,23 @@ export default function FavoritesScreen() {
       .ref('UserFavorites')
       .on('value', snapshot => {
       let data = snapshot.val() || {};
+      let total2 = 0
       objectDict = {...data};
       //console.log(objectDict)
       favarr.length = 0
       Object.entries(objectDict).forEach(([key, value]) => {
           //console.log(value)
           let tempObj = {name: value.name, price: value.value}
+          total2 += value.value
           favarr.push(tempObj)
          })
       //console.log(favarr)
       setData(favarr)
+      setTotal(total2)
       // this.setState({...arr})
       })
     }, []);
+    if(total>0){
     return (
       <SafeAreaView style={styles.container}>
       <ScrollView>
@@ -55,6 +59,19 @@ export default function FavoritesScreen() {
               </ScrollView>
             </SafeAreaView>
     )
+    }
+    else{
+      return (
+        <SafeAreaView style={styles.container}>
+        <ScrollView>
+                <View>
+                <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Favorites"/>
+                {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+                </View>
+                </ScrollView>
+              </SafeAreaView>
+      )
+    }
     }
 
 const styles = StyleSheet.create({
