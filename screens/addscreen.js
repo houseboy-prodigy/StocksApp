@@ -93,8 +93,8 @@ render() {
       <Text
       style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2,color: 'black'}}>
       
-      {parseFloat(searchResult.price)*parseInt(quantity)}
-      {console.log(costval)}
+      {(parseFloat(searchResult.price)*parseInt(quantity))}
+      
       
       </Text>
 

@@ -22,12 +22,7 @@ class StockBoxLG extends Component {
 		return (
       <View style={styles.stockContainer}>
 
-      <LinearGradient
-			// Background Linear Gradient
-      colors={this.props.colors}
-      //colors={['transparent','#20BF55']}
-			style={styles.background}
-      />
+
       <TouchableOpacity 
  onLongPress={() => {this.deletefromdb(this.props.name)}}
  delayLongPress={300}>

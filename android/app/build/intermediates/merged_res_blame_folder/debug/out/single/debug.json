@@ -1,46 +1,62 @@
 [
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-xxhdpi_ic_launcher_round.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-xxhdpi/ic_launcher_round.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-xxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-xxhdpi_ic_launcher.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-xxhdpi/ic_launcher.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/drawable_background_splash.xml.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/drawable/background_splash.xml"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-hdpi_ic_launcher_round.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-hdpi/ic_launcher_round.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-hdpi/ic_launcher.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-xhdpi_ic_launcher_round.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-xhdpi/ic_launcher_round.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/drawable_splash.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/drawable/splash.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-mdpi_ic_launcher_round.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-mdpi/ic_launcher_round.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/drawable_tesla.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/drawable/tesla.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-xxxhdpi_ic_launcher.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-xxxhdpi/ic_launcher.png"
+        "merged": "com.stocksapp-merged_res-34:/drawable_splash.png.flat",
+        "source": "com.stocksapp-main-36:/drawable/splash.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-mdpi_ic_launcher.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-mdpi/ic_launcher.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-xxxhdpi/ic_launcher.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-xhdpi_ic_launcher.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-xhdpi/ic_launcher.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-xhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-xxxhdpi/ic_launcher_round.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-xxxhdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/mipmap-hdpi_ic_launcher.png.flat",
-        "source": "com.stocksapp-main-36:/mipmap-hdpi/ic_launcher.png"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-hdpi/ic_launcher_round.png"
     },
     {
-        "merged": "com.stocksapp-merged_res-34:/drawable_rn_edit_text_material.xml.flat",
-        "source": "com.stocksapp-main-36:/drawable/rn_edit_text_material.xml"
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/drawable_rn_edit_text_material.xml.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/drawable/rn_edit_text_material.xml"
+    },
+    {
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-merged_res-34:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/Anshul/.gradle/daemon/7.5.1/com.stocksapp-main-36:/mipmap-xhdpi/ic_launcher.png"
     }
 ]

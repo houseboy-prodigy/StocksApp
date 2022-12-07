@@ -48,16 +48,20 @@ export default function FavoritesScreen() {
       // this.setState({...arr})
       })
     }, []);
-    if(total>0){
+    if(data.length == 0){
     return (
-      <SafeAreaView style={styles.container}>
-      <ScrollView>
-              <View>
-              <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Favorites"/>
-              {data.map((item,index) => (<StockBox key={index} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
-              </View>
-              </ScrollView>
-            </SafeAreaView>
+        
+      <View style={styles.container}>
+      <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Favorites"/>
+      {data.map((item,index) => (<StockBoxLG key={index} colors={['transparent','#20BF55']} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+
+      
+      
+      
+      <Text style={styles.paragraph}>
+      No Favorites added yet, Please go to the Search screen to add Favorites
+    </Text>
+    </View>
     )
     }
     else{
@@ -101,6 +105,15 @@ const styles = StyleSheet.create({
       right: 0,
       top: 0,
       height: 300,
+      },
+      paragraph: {
+        margin: 24,
+        marginTop: 200,
+        fontSize: 20,
+        
+        color: 'white',
+        fontWeight: 'bold',
+        textAlign: 'center',
       },
     button: {
         paddingTop: 50,

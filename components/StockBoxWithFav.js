@@ -10,6 +10,7 @@ import database from '@react-native-firebase/database';
 
 export default function StockBoxWithFav(props){
   const[alternateImage, setAlternateImage] = useState(true);
+  const[isFound, setIsFound] = useState(false);
   const changeImage = () => {
     console.log('here in changeimage')
     setAlternateImage(alternateImage => !alternateImage);
@@ -31,6 +32,22 @@ export default function StockBoxWithFav(props){
     }
  }
 
+
+ queryStock = (name) => {
+  try {
+    database().ref('UserFavorites').child(name).once("value").then((snapshot) => {
+      if (snapshot.exists()) {
+        setIsFound(true);
+        console.log('exists');
+      } else {
+          console.log("doesn't exist");
+      }
+  });
+  } catch (error) {
+      console.log('error is here')
+      console.log(error.toString())
+  }
+}
 
  deletefromdb = (name) => {
   try {
@@ -54,7 +71,7 @@ export default function StockBoxWithFav(props){
     changeImage();
    }
 }
-
+  
 		return (
       <View style={styles.stockContainer}>
       <Image style={styles.logo} source={props.image} />
@@ -65,9 +82,7 @@ export default function StockBoxWithFav(props){
         {props.price}
       </Text>
       <TouchableOpacity onPress={FavoriteActions}>
-      {alternateImage && <Image style={styles.logo} source={favoritesImage} />}
-        {!alternateImage && <Image style={styles.logo} source={favoritesImage2} />}
-      
+      {<Image style={styles.logo} source={props.favImage} />}
   </TouchableOpacity>    
   </View>
 		);

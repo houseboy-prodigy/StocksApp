@@ -53,11 +53,12 @@ export default function HomeScreen() {
       favarr.length = 0
       Object.entries(objectDict).forEach(([key, value]) => {
           //console.log(value)
-          searchStockPrice(value.name)
-          pl+= 1 * parseInt(value.quant)
+          
+          pl+= 10 * parseInt(value.quant)
           let tempObj = {name: value.name, price: value.cost.toFixed(2)}
           total += value.cost
           favarr.push(tempObj)
+          console.log(currPrice)
          })
       console.log(`finalpl: ${pl}`)
       //console.log(favarr)
@@ -67,7 +68,27 @@ export default function HomeScreen() {
       // this.setState({...arr})
       })
     }, []);
-    if(profitloss > 200){
+    if(data.length == 0){
+      return (
+      
+         
+        
+                <View style={styles.container}>
+                <HeaderWithPL headingStyle={styles.heading} colors={['transparent','#20BF55']} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
+                {data.map((item,index) => (<StockBoxLG key={index} colors={['transparent','#20BF55']} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
+
+                
+                
+                
+                <Text style={styles.paragraph}>
+                No Stocks added yet, Please go to the Add screen to start your portfolio
+              </Text>
+              </View>
+              
+      );
+      }
+
+    else if(profitloss > 200){
     return (
       
       <SafeAreaView style={styles.container}>
@@ -117,6 +138,15 @@ const styles = StyleSheet.create({
 		padding: 75,
     backgroundColor: 'black',
     
+    },
+    paragraph: {
+      margin: 24,
+      marginTop: 200,
+      fontSize: 20,
+      
+      color: 'white',
+      fontWeight: 'bold',
+      textAlign: 'center',
     },
     background: {
       position: 'absolute',

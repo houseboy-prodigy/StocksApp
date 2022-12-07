@@ -15,6 +15,9 @@ import { useNavigation } from '@react-navigation/native';
 import Container from '../components/Container'
 import StockBoxFav from '../components/StockBoxWithFav'
 import * as All  from '../assets/'
+import database from '@react-native-firebase/database';
+import favoritesImage from '../assets/fav.png'
+import favoritesImage2 from '../assets/redfav.png'
 // container for screen content and components
 
 class SearchScreen extends Component {
@@ -27,7 +30,8 @@ class SearchScreen extends Component {
         searchResult: null,
         searchResultName: null,
         error: "",
-        isLoading: false
+        isLoading: false,
+        isFound: false
       };
     }
   
@@ -74,41 +78,92 @@ class SearchScreen extends Component {
         searchResult: null,
         searchResultName: null,
         error: "",
-        isLoading: false
+        isLoading: false,
+        isFound: false
       });
     }
 
+    queryStock = (name) => {
+      try {
+        database().ref('UserFavorites').child(name).once("value").then((snapshot) => {
+          if (snapshot.exists()) {
+            console.log('found')
+            this.setState({
+              
+              isFound: true
+            });
+            console.log('exists');
+          } else {
+              console.log("doesn't exist");
+          }
+      });
+      } catch (error) {
+          console.log('error is here')
+          console.log(error.toString())
+      }
+    }
+
     searchAll = () => {
-      this.searchStockName();
+      this.queryStock(this.state.searchInput);
       this.searchStock();
+      this.searchStockName();
+      
     }
 
     render() {
         
-        const { searchInput, searchResult, searchResultName, error, isLoading } = this.state;
+        const { searchInput, searchResult, searchResultName, error, isLoading,isFound } = this.state;
         
         if (searchResult && searchResultName) {
-          return (
+          if(isFound){
+            return (
             
-            <Container>
-              <View>
-              <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Results"/>
-              <StockBoxFav name={searchResult.name}
-              price={searchResult.price}
-              image={All[`${searchResult.name}`]}
-              />
-              <Button
-  onPress={this.searchAgain}
-  title="Search Again"
-  color="#1D519C"
-
-  accessibilityLabel="Learn more about this purple button"
-/>
-              </View>
+              <Container>
+                <View>
+                <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Results"/>
+                <StockBoxFav name={searchResult.name}
+                price={searchResult?.price}
+                image={All[`${searchResult.name}`]}
+                favImage={favoritesImage2}
+                />
+                <Button
+    onPress={this.searchAgain}
+    title="Search Again"
+    color="#1D519C"
+  
+    accessibilityLabel="Learn more about this purple button"
+  />
+                </View>
+                
+              </Container>
               
-            </Container>
+            );
+          }
+          else{
+            return (
             
-          );
+              <Container>
+                <View>
+                <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Results"/>
+                <StockBoxFav name={searchResult.name}
+                price={searchResult.price}
+                image={All[`${searchResult.name}`]}
+                favImage={favoritesImage}
+                />
+                <Button
+    onPress={this.searchAgain}
+    title="Search Again"
+    color="#1D519C"
+  
+    accessibilityLabel="Learn more about this purple button"
+  />
+                </View>
+                
+              </Container>
+              
+            );
+          }
+
         } else {
           return (
             <Container>

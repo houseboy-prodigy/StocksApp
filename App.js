@@ -33,7 +33,7 @@ import { firebaseConfig } from './firebase-key/config'
 import firebase from '@react-native-firebase/app';
 import LoginScreen from './screens/LoginScreen';
 import AddScreen from './screens/addscreen'
-import readSuccessScreen from './screens/readSuccess'
+import ReadSuccessScreen from './screens/readSuccess'
 const Stack = createNativeStackNavigator();
 // container for screen content and components
 /*Home screen Code*/
@@ -243,7 +243,7 @@ options={{
 />
 <Tab.Screen
 name="Profile"
-component={LoginScreen}
+component={ReadSuccessScreen}
 options={{
   tabBarIcon: ({ focused }) => {
     return (
