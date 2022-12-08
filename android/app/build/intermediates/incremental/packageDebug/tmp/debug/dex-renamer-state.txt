@@ -1,4 +1,4 @@
-#Tue Dec 06 21:07:59 CST 2022
+#Wed Dec 07 23:25:00 CST 2022
 base.0=C\:\\Users\\adria\\Documents\\LUC\\Fall 2022\\COMP 422\\StocksApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\classes.dex
 base.1=C\:\\Users\\adria\\Documents\\LUC\\Fall 2022\\COMP 422\\StocksApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeLibDexDebug\\0\\classes.dex
 base.2=C\:\\Users\\adria\\Documents\\LUC\\Fall 2022\\COMP 422\\StocksApp\\android\\app\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\0\\classes.dex

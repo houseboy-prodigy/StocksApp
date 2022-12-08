@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity,Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import database from '@react-native-firebase/database';
 
@@ -11,7 +11,7 @@ class StockBoxLG extends Component {
         const path = 'UserPortfolio/' + '' + name
         database()
             .ref(path).remove()
-            .then(() => console.log('Data removed.'));
+            .then(() => console.log('Data removed.')).then(Alert.alert('Stock Deleted from portfolio'));
     } catch (error) {
         console.log('error is here')
         console.log(error.toString())
@@ -22,12 +22,7 @@ class StockBoxLG extends Component {
 		return (
       <View style={styles.stockContainer}>
 
-      <LinearGradient
-			// Background Linear Gradient
-      colors={this.props.colors}
-      //colors={['transparent','#20BF55']}
-			style={styles.background}
-      />
+
       <TouchableOpacity 
  onLongPress={() => {this.deletefromdb(this.props.name)}}
  delayLongPress={300}>

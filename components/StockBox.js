@@ -1,18 +1,36 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image} from 'react-native';
+import { Button, StyleSheet, Text, View, Image,TouchableOpacity,Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+import database from '@react-native-firebase/database';
 
 // main content and structure - e.g. text, image &c.
 class StockBox extends Component {
+
+  deletefromdb = (name) => {
+    try {
+        const path = 'UserFavorites/' + '' + name
+        database()
+            .ref(path).remove()
+            .then(() => console.log('Data removed.')).then(Alert.alert('Stock Deleted from Favorites'));
+    } catch (error) {
+        console.log('error is here')
+        console.log(error.toString())
+    }
+  }
+
 	render() {
 		return (
       <View style={styles.stockContainer}>
+      <TouchableOpacity 
+      onLongPress={() => {this.deletefromdb(this.props.name)}}
+      delayLongPress={300}>
       <Image style={styles.logo} source={this.props.image} />
+     </TouchableOpacity>
       <Text style={styles.paragraph}>
         {this.props.name}
       </Text>
       <Text style={styles.para}>
-        {this.props.price}
+        {this.props.price.toFixed(2)}
       </Text>
     </View>
 		);

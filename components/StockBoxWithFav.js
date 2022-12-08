@@ -1,4 +1,4 @@
-import React, { Component,useState } from 'react';
+import React, { Component,useState,useEffect } from 'react';
 import { Button, StyleSheet, Text, View, Image, TouchableOpacity, Alert} from 'react-native';
 import Swipeable from 'react-native-gesture-handler/Swipeable';
 // main content and structure - e.g. text, image &c.
@@ -9,11 +9,13 @@ import database from '@react-native-firebase/database';
 
 
 export default function StockBoxWithFav(props){
-  const[alternateImage, setAlternateImage] = useState(true);
+  const[notaddedyet, setAlternateImage] = useState(true);
+  const[isFound, setIsFound] = useState(false);
   const changeImage = () => {
     console.log('here in changeimage')
     setAlternateImage(alternateImage => !alternateImage);
   }
+
   writeIDtoDB = (name, value) => {
     try {
         const path = 'UserFavorites/' + '' + name
@@ -31,7 +33,6 @@ export default function StockBoxWithFav(props){
     }
  }
 
-
  deletefromdb = (name) => {
   try {
       const path = 'UserFavorites/' + '' + name
@@ -45,7 +46,7 @@ export default function StockBoxWithFav(props){
 }
 
  FavoriteActions = () => {
-   if(alternateImage){
+   if(notaddedyet){
   writeIDtoDB(props.name,props.price);
   changeImage();
    }
@@ -55,6 +56,27 @@ export default function StockBoxWithFav(props){
    }
 }
 
+queryStock = (name) => {
+  try {
+    database().ref('UserFavorites').child(name).once("value").then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log('found')
+        setAlternateImage(false)
+        console.log('exists');
+      } else {
+          console.log("doesn't exist");
+      }
+  });
+  } catch (error) {
+      console.log('error is here')
+      console.log(error.toString())
+  }
+}
+  useEffect(() => {
+    queryStock(props.name);
+  }, []);
+
+  
 		return (
       <View style={styles.stockContainer}>
       <Image style={styles.logo} source={props.image} />
@@ -65,9 +87,8 @@ export default function StockBoxWithFav(props){
         {props.price}
       </Text>
       <TouchableOpacity onPress={FavoriteActions}>
-      {alternateImage && <Image style={styles.logo} source={favoritesImage} />}
-        {!alternateImage && <Image style={styles.logo} source={favoritesImage2} />}
-      
+      {notaddedyet && <Image style={styles.logo} source={favoritesImage} />}
+      {!notaddedyet && <Image style={styles.logo} source={favoritesImage2} />}
   </TouchableOpacity>    
   </View>
 		);

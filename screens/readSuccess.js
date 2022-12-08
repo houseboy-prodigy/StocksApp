@@ -11,7 +11,7 @@ import { withNavigation } from 'react-navigation';
 
 // EXAMPLE OF WRITING TO THE REALTIME DATABASE ///////////////////////////////////////
 
-class readSuccessScreen extends React.Component {
+class ReadSuccessScreen extends React.Component {
 
     constructor(props){
         super(props)
@@ -25,18 +25,45 @@ class readSuccessScreen extends React.Component {
         navigate('Success')
     }
 
-    deletefromdb = (name) => {
-        try {
-            const path = 'UserFavorites/' + '' + name
-            database()
-                .ref(path).remove()
-                .then(() => console.log('Data removed.'));
 
-        } catch (error) {
-            console.log(error.toString())
-        }
-     }
+    testing = (name) => {
+      try {
+        database().ref('UserFavorites').child(name).once("value").then((snapshot) => {
+          if (snapshot.exists()) {
+              console.log("exists");
+          } else {
+              console.log("doesn't exist");
+          }
+      });
+      } catch (error) {
+          console.log('error is here')
+          console.log(error.toString())
+      }
+    }
 
+
+    
+    
+/*
+    testing = (name) => {
+      var isFound = false
+      try {
+        
+        database().ref('UserFavorites').child(name)
+        .once('value')
+        .then((snapshot) =>  {
+          isFound = true
+          var value = snapshot.val();
+          console.log('found:', value.name);
+          console.log(isFound)
+        });
+      } catch (error) {
+          console.log(isFound)
+          console.log('error is here')
+          console.log(error.toString())
+      }
+    }
+    */
     render () {
     return (
         <View>
@@ -49,7 +76,7 @@ class readSuccessScreen extends React.Component {
                     />
                 </Item>
                 <Button style={{ marginTop: 10 }} full rounded success
-                onPress={() => { this.deletefromdb(this.state.name) }}>
+                onPress={() => { this.testing(this.state.name) }}>
                     <Text style = {{ color: 'white' }}>delete</Text>
                 </Button>
             {/* </Form> */}
@@ -58,4 +85,4 @@ class readSuccessScreen extends React.Component {
 }
 }
 
-export default readSuccessScreen;
+export default ReadSuccessScreen;

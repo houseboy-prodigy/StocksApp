@@ -33,7 +33,7 @@ import { firebaseConfig } from './firebase-key/config'
 import firebase from '@react-native-firebase/app';
 import LoginScreen from './screens/LoginScreen';
 import AddScreen from './screens/addscreen'
-import readSuccessScreen from './screens/readSuccess'
+import ReadSuccessScreen from './screens/readSuccess'
 import data from './Local-data/local.json'
 import ProfileScreen from './screens/profilescreen';
 const Stack = createNativeStackNavigator();
