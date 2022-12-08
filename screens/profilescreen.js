@@ -1,39 +1,32 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
-import HeaderWithPL from '../components/HeaderWithPL'
-import NavBar from '../components/NavBar'
-import appleImage from '../assets/apple.png'
-import googleImage from '../assets/google.png'
-import StockBox from '../components/StockBox'
-import getPriceFromApi from '../components/ApiCall'
 import Header from '../components/Header'
-import homeImage from '../assets/home.png'
 import userImage from '../assets/user.png'
-import addImage from '../assets/add.png'
-import favoriteImage from '../assets/favorites.png'
-import marketImage from '../assets/chart.png'
-class Container extends Component {
-	render() {
-		return (
-			<View style={styles.container}>
-				{this.props.children}
-			</View>
-		);
-	}
-}
+
+
 class ProfileScreen extends Component {
 
-	loadRoute = () => this.props.navigation.navigate('Home');
-  loadRouteFavorites = () => this.props.navigation.navigate('Favorites');
+	constructor(props) {
+		super(props)
+		this.handleStatusChange=this.handleStatusChange.bind(this)
+	  }
+  
+	handleStatusChange = () =>{
+		this.props.onStatusChange()
+	}
 
-	render() {
+
+	render = () => {
 		return (
-				<Container>
-				<Header headingStyle={styles.heading} headingStyleL={styles.background} title="MRKT"/>
-				<StockBox name= 'Log Out'
-         price=''
-         image={userImage}/>
-				</Container>
+				<View style={styles.container}>
+					<Header headingStyle={styles.heading} headingStyleL={styles.background} title="MRKT"/>
+					<TouchableOpacity name = "Log out" style={styles.stockContainer} onPress={() => this.handleStatusChange()}>
+						<Image style={styles.logo} source={userImage} />
+						<Text style={styles.paragraph}>
+							Log Out
+						</Text>
+					</TouchableOpacity>
+				</View>
 		);
 	}
 }
@@ -72,5 +65,35 @@ const styles = StyleSheet.create({
         width: 80,
         height: 20,
         },
+	stockContainer: {
+		flexDirection: 'row',
+		backgroundColor: 'black',
+		borderWidth:0.5,
+		borderTopColor: 'lightgrey',
+		borderBottomColor: '#7B7B7B',
+		borderRadius: 10,
+		padding: 10,
+		},  
+	logo: {
+		marginLeft:0,
+		height: 50,
+		width: 50,
+	},
+	background2: {
+		position: 'absolute',
+		left: 0,
+		right: 0,
+		top: 0,
+		height: 300,
+	},
+	paragraph: {
+		margin: 10,
+		marginTop: 15 ,
+		marginLeft: 15,
+		fontSize: 14,
+		fontWeight: 'bold',
+		textAlign: 'left',
+		color: 'white'
+	},
 })
 export default ProfileScreen;

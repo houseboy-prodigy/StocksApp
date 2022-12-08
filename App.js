@@ -26,7 +26,7 @@ import searchImage from './assets/Search_Icon.png'
 import HomeScreen from './screens/homescreen'
 import FavoritesScreen from './screens/favoritesscreen'
 import SearchScreen from './screens/searchscreen'
-import profileScreen from './screens/profilescreen'
+// import profileScreen from './screens/profilescreen'
 import { firebaseConfig } from './firebase-key/config'
 //  import { firebase } from './firebase/config'
 //  import * as firebase from 'firebase/app';
@@ -35,6 +35,7 @@ import LoginScreen from './screens/LoginScreen';
 import AddScreen from './screens/addscreen'
 import readSuccessScreen from './screens/readSuccess'
 import data from './Local-data/local.json'
+import ProfileScreen from './screens/profilescreen';
 const Stack = createNativeStackNavigator();
 // container for screen content and components
 /*Home screen Code*/
@@ -158,109 +159,123 @@ class FavoritesScreen extends Component {
 
 const Tab = createBottomTabNavigator();
 
-function MyTabs() {
-  return (
-    <Tab.Navigator
-  initialRouteName="Home"
-  screenOptions={{
-    "tabBarActiveTintColor": "#fff",
-    "tabBarInactiveTintColor": "lightgray",
-    "tabBarActiveBackgroundColor": "black",
-    "tabBarInactiveBackgroundColor": "black",
-    "tabBarStyle": [
-      {
-        "display": "flex"
-      },
-      null
-    ]
-  }}>
-    <Tab.Screen
-    name="Home"
-    component={HomeScreen}
-    options={{
-      tabBarIcon: ({ focused }) => {
-        return (
-          <View>
-            <Image
-              source={homeImage}
-              resizeMode="contain"
-              style={{ width: 25 }}
-            />
-          </View>
-        );
-      },
-    }}
-  />
-  <Tab.Screen
-name="Add"
-component={AddScreen}
-options={{
-  tabBarIcon: ({ focused }) => {
-    return (
-      <View>
-        <Image
-          source={addImage}
-          resizeMode="contain"
-          style={{ width: 25 }}
-        />
-      </View>
-    );
-  },
-}}
-/>
-  <Tab.Screen
-  name="Favorites"
-  component={FavoritesScreen}
-  options={{
-    tabBarIcon: ({ focused }) => {
+class MyTabs extends React.Component {
+
+
+  constructor(props) {
+    super(props)
+    this.handleStatusChange=this.handleStatusChange.bind(this)
+  }
+
+  handleStatusChange = () =>{
+    this.props.onStatusChange()
+  }
+
+  render = () =>{
       return (
-        <View>
-          <Image
-            source={favoriteImage}
-            resizeMode="contain"
-            style={{ width: 25 }}
-          />
-        </View>
-      );
-    },
-  }}
-/>
-<Tab.Screen
-name="Search"
-component={SearchScreen}
-options={{
-  tabBarIcon: ({ focused }) => {
-    return (
-      <View>
-        <Image
-          source={searchImage}
-          resizeMode="contain"
-          style={{ width: 25 }}
-        />
-      </View>
-    );
-  },
-}}
-/>
-<Tab.Screen
-name="Profile"
-component={profileScreen}
-options={{
-  tabBarIcon: ({ focused }) => {
-    return (
-      <View>
-        <Image
-          source={profileImage}
-          resizeMode="contain"
-          style={{ width: 25 }}
-        />
-      </View>
-    );
-  },
-}}
-/> 
+        <Tab.Navigator
+          initialRouteName="Home"
+          screenOptions={{
+            "tabBarActiveTintColor": "#fff",
+            "tabBarInactiveTintColor": "lightgray",
+            "tabBarActiveBackgroundColor": "black",
+            "tabBarInactiveBackgroundColor": "black",
+            "tabBarStyle": [
+              {
+                "display": "flex"
+              },
+              null
+            ]
+        }}>
+                <Tab.Screen
+                name="Home"
+                component={HomeScreen}
+                options={{
+                  tabBarIcon: ({ focused }) => {
+                    return (
+                      <View>
+                        <Image
+                          source={homeImage}
+                          resizeMode="contain"
+                          style={{ width: 25 }}
+                        />
+                      </View>
+                    );
+                  },
+                }}
+              />
+              <Tab.Screen
+            name="Add"
+            component={AddScreen}
+            options={{
+              tabBarIcon: ({ focused }) => {
+                return (
+                  <View>
+                    <Image
+                      source={addImage}
+                      resizeMode="contain"
+                      style={{ width: 25 }}
+                    />
+                  </View>
+                );
+              },
+            }}
+            />
+              <Tab.Screen
+              name="Favorites"
+              component={FavoritesScreen}
+              options={{
+                tabBarIcon: ({ focused }) => {
+                  return (
+                    <View>
+                      <Image
+                        source={favoriteImage}
+                        resizeMode="contain"
+                        style={{ width: 25 }}
+                      />
+                    </View>
+                  );
+                },
+              }}
+            />
+            <Tab.Screen
+            name="Search"
+            component={SearchScreen}
+            options={{
+              tabBarIcon: ({ focused }) => {
+                return (
+                  <View>
+                    <Image
+                      source={searchImage}
+                      resizeMode="contain"
+                      style={{ width: 25 }}
+                    />
+                  </View>
+                );
+              },
+            }}
+            />
+            <Tab.Screen
+            name="Profile"
+            children={()=><ProfileScreen onStatusChange={this.handleStatusChange}/>}
+            options={{
+              tabBarIcon: ({ focused }) => {
+                return (
+                  <View>
+                    <Image
+                      source={profileImage}
+                      resizeMode="contain"
+                      style={{ width: 25 }}
+                    />
+                  </View>
+                );
+              },
+            }}
+            
+            /> 
     </Tab.Navigator>
-  );
+      );
+  }
 }
 
 // Initialize Firebase
@@ -282,16 +297,18 @@ class App extends Component {
       })
     }
 
-    changeLoggingState(){
-      this.setState({loggingStatus: true})
-    }
+  changeLoggingState = () =>{
+    this.state.loggingStatus ? this.setState({loggingStatus: false}) : this.setState({loggingStatus: true})
+  }
   
-	render() {
+	render = () => {
 		return (
       <NavigationContainer> 
         {
-          this.state.loggingStatus ? (<MyTabs />) : (
-           <LoginScreen onStatusChange={this.changeLoggingState}/>
+          this.state.loggingStatus ? (
+            <MyTabs onStatusChange={this.changeLoggingState}/>
+        ) : (
+            <LoginScreen onStatusChange={this.changeLoggingState}/>
             )
         }
 			</NavigationContainer>
