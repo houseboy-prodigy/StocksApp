@@ -90,13 +90,13 @@ render() {
     />
       <Text
       style={styles.inputbox}>
-      {searchResult.price}
+      {searchResult.price.toFixed(2)}
       
       </Text>
       <Text
       style={styles.inputbox}>
       
-      {(parseFloat(searchResult.price)*parseInt(quantity))}
+      {(parseFloat(searchResult.price)*parseInt(quantity)).toFixed(2)}
       
       
       </Text>

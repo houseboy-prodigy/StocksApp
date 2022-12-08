@@ -2,6 +2,7 @@ import React, { Component, useEffect, useState } from 'react';
 import { Button, StyleSheet, Text, View, Image,TouchableOpacity,  SafeAreaView, ScrollView} from 'react-native';
 import HeaderWithPL from '../components/HeaderWithPL'
 import NavBar from '../components/NavBar'
+import HeaderWithSub from '../components/HeaderWithPL2'
 
 import StockBoxLG from '../components/StockBoxLG'
 import getPriceFromApi from '../components/ApiCall'

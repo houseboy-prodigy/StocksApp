@@ -278,7 +278,7 @@ class MyTabs extends React.Component {
   }
 }
 
-class MyTabsLogin extends React.Component {
+class Mytabslogin extends React.Component {
 
 
   constructor(props) {
@@ -376,7 +376,7 @@ class MyTabsLogin extends React.Component {
             />
             <Tab.Screen
             name="Profile"
-            children={()=><ProfileScreen onStatusChange={this.handleStatusChange}/>}
+            children={()=><LoginScreen onStatusChange={this.handleStatusChange}/>}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
@@ -426,8 +426,7 @@ class App extends Component {
           this.state.loggingStatus ? (
             <MyTabs onStatusChange={this.changeLoggingState}/>
         ) : (
-            <LoginScreen onStatusChange={this.changeLoggingState}/>
-            
+          <LoginScreen onStatusChange={this.changeLoggingState}/>
             )
         }
 			</NavigationContainer>
