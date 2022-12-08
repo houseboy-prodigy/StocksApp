@@ -75,23 +75,25 @@ render() {
         return(
             <Container>
             <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Add"/>
-      <TextInput style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2, color: 'black'}}
+      <TextInput style={styles.inputbox}
         placeholder="Name of the Stock"
+        placeholderTextColor='white'
           value={searchInput}
         
         //defaultValue={'Quantity'}
       />
-      <TextInput style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
+      <TextInput style={styles.inputbox}
       placeholder="Quantity"
+      placeholderTextColor='white'
       value={quantity} 
     />
       <Text
-      style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2, color: 'black'}}>
+      style={styles.inputbox}>
       {searchResult.price}
       
       </Text>
       <Text
-      style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2,color: 'black'}}>
+      style={styles.inputbox}>
       
       {(parseFloat(searchResult.price)*parseInt(quantity))}
       
@@ -116,8 +118,9 @@ render() {
           return(
               <Container>
               <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Add"/>
-              <TextInput style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
+              <TextInput style={styles.inputbox}
         placeholder="Name of the Stock"
+        placeholderTextColor='white'
         onChangeText={searchInput => {
             this.setState({ searchInput });
           }}
@@ -127,8 +130,9 @@ render() {
         //defaultValue={'Quantity'}
       />
 
-      <TextInput style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
+      <TextInput style={styles.inputbox}
         placeholder="Quantity"
+        placeholderTextColor='white'
         keyboardType = 'numeric'
         onChangeText={quantity => {
             this.setState({ quantity });
@@ -137,16 +141,18 @@ render() {
         //defaultValue={'Quantity'}
       />
       <TextInput
-      style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
+      style={styles.inputbox}
       placeholder="Price"
+      placeholderTextColor='white'
       keyboardType = 'numeric'
       value={searchResult}
       //defaultValue={'Price'}
     />
       
       <TextInput
-       style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
+       style={styles.inputbox}
         placeholder="Cost"
+        placeholderTextColor='white'
         keyboardType = 'numeric'
         //value={cost}
         //defaultValue={cost}
@@ -192,6 +198,15 @@ const styles = StyleSheet.create({
     width: 150,
     alignItems: 'center',
     justifyContent: 'flex-start',
+    },
+    inputbox:{
+      padding: 15,
+      backgroundColor: 'black',
+      color: 'white',
+      fontSize: 15, 
+      borderBottomColor: '#7B7B7B', 
+      borderColor: 'black',
+      borderWidth: 2
     },
 button: {
 paddingTop: 50,

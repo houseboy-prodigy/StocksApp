@@ -141,9 +141,9 @@ class SearchScreen extends Component {
             <View>
             <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Search Stock"/>
             <TextInput
-                style={{padding: 15,backgroundColor: 'white',borderColor: 'black',borderWidth: 2}}
+                style={styles.inputbox}
                   placeholder="Find Your Stock.."
-                  
+                  placeholderTextColor='white'
                   underlineColorAndroid="transparent"
                   autoCapitalize="none"
                   onChangeText={searchInput => {
@@ -187,6 +187,15 @@ const styles = StyleSheet.create({
           right: 0,
           top: 0,
           height: 300,
+          },
+          inputbox:{
+            padding: 15,
+            backgroundColor: 'black',
+            color: 'white',
+            fontSize: 15, 
+            borderBottomColor: '#7B7B7B', 
+            borderColor: 'black',
+            borderWidth: 2
           },
     button: {
     paddingTop: 50,
