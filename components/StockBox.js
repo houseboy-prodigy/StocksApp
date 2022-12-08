@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
+import { Button, StyleSheet, Text, View, Image,TouchableOpacity,Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import database from '@react-native-firebase/database';
 
@@ -11,7 +11,7 @@ class StockBox extends Component {
         const path = 'UserFavorites/' + '' + name
         database()
             .ref(path).remove()
-            .then(() => console.log('Data removed.'));
+            .then(() => console.log('Data removed.')).then(Alert.alert('Stock Deleted from Favorites'));
     } catch (error) {
         console.log('error is here')
         console.log(error.toString())

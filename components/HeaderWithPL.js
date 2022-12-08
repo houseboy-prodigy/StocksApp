@@ -29,6 +29,7 @@ class HeaderWithPL extends Component {
 			<View style={this.props.headingStyle}>
 			<LinearGradient
 			// Background Linear Gradient
+			start={this.props.start}
 			colors={this.props.colors}
 			style={this.props.headingStyleL}
 		  />

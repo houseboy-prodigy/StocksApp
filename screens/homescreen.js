@@ -70,11 +70,8 @@ export default function HomeScreen() {
     }, []);
     if(data.length == 0){
       return (
-      
-         
-        
                 <View style={styles.container}>
-                <HeaderWithPL headingStyle={styles.heading} colors={['transparent','#20BF55']} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
+                <HeaderWithPL headingStyle={styles.heading} start = {{x:0.5, y: 0.55}} colors={['transparent','#D9DAD9']} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
                 {data.map((item,index) => (<StockBoxLG key={index} colors={['transparent','#20BF55']} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
 
                 
@@ -94,7 +91,7 @@ export default function HomeScreen() {
       <SafeAreaView style={styles.container}>
       <ScrollView>
               <View>
-              <HeaderWithPL headingStyle={styles.heading} colors={['transparent','#F53844']} headingStyleL={styles.background} title={`$${total}`} loss = {`-$${profitloss}`}/>
+              <HeaderWithPL headingStyle={styles.heading} start = {{x:0.7, y: 0.4}} colors={['transparent','#C30202']} headingStyleL={styles.background} title={`$${total}`} loss = {`-$${profitloss}`}/>
     
               {data.map((item,index) => (<StockBoxLG key={index} colors={['transparent','#F53844']} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
 
@@ -109,7 +106,7 @@ export default function HomeScreen() {
         <SafeAreaView style={styles.container}>
         <ScrollView>
                 <View>
-                <HeaderWithPL headingStyle={styles.heading} colors={['transparent','#20BF55']} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
+                <HeaderWithPL headingStyle={styles.heading} start = {{x:0.3, y: 0.4}} colors={['transparent','#5BD17B']} headingStyleL={styles.background} title={`$${total}`} profit = {`$${profitloss}`}/>
                 {data.map((item,index) => (<StockBoxLG key={index} colors={['transparent','#20BF55']} name={item.name} price={item.price} image={All[`${item.name}`]}/>))}
                 </View>
                 </ScrollView>
