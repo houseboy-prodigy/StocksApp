@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import Header from '../components/Header'
 import userImage from '../assets/user.png'
+import settings from '../assets/settings.png'
+import help from '../assets/help.png'
+import notif from '../assets/bell.png'
+import logout from '../assets/logout.png'
+import ProfileButton from '../components/ProfileButton';
 
 
 class ProfileScreen extends Component {
@@ -19,9 +24,12 @@ class ProfileScreen extends Component {
 	render = () => {
 		return (
 				<View style={styles.container}>
-					<Header headingStyle={styles.heading} headingStyleL={styles.background} title="MRKT"/>
+					<Header headingStyle={styles.heading} headingStyleL={styles.background} title="Profile"/>
+					<ProfileButton name = "Notifications" hasSwitch={true} image={notif}/>
+					<ProfileButton name = "Settings" image={settings}/>
+					<ProfileButton name = "Change Password" image={help}/>
 					<TouchableOpacity name = "Log out" style={styles.stockContainer} onPress={() => this.handleStatusChange()}>
-						<Image style={styles.logo} source={userImage} />
+						<Image style={styles.logo} source={logout} />
 						<Text style={styles.paragraph}>
 							Log Out
 						</Text>
@@ -51,7 +59,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		margin: 5,
 		padding: 100,
-		backgroundColor: '#1D519C',
+		backgroundColor: 'black',
 	},
 	background: {
 		position: 'absolute',
@@ -76,8 +84,8 @@ const styles = StyleSheet.create({
 		},  
 	logo: {
 		marginLeft:0,
-		height: 50,
-		width: 50,
+		height: 45,
+		width: 45,
 	},
 	background2: {
 		position: 'absolute',

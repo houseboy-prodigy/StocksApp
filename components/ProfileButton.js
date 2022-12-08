@@ -1,30 +1,32 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
+import { Button, StyleSheet, Text, View, Image, TouchableOpacity, Switch} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
 
-class ProfileButton extends Component {
+const ProfileButton = (props) => {
 
-  constructor(props) {
-    super(props)
-    // this.state = ({
-    //   email: '',
-    //   password: ''
-    // })
-  }
+  const [isSwitchOn, setIsSwitchOn] = React.useState(false);
+
+  const onToggleSwitch = () => setIsSwitchOn(!isSwitchOn);
 
   
 
-	render() {
+	// render() {
 		return (
       <TouchableOpacity style={styles.stockContainer}>
-          <Image style={styles.logo} source={this.props.image} />
+          <Image style={styles.logo} source={props.image} />
           <Text style={styles.paragraph}>
-            {this.props.name}
+            {props.name}
           </Text>
+          {props.hasSwitch? (
+          <View style = {styles.switchView}>
+              <Switch style={styles.switch} thumbColor='white' trackColor={{ false: 'grey', true: 'green' }}
+              value={isSwitchOn} onValueChange={onToggleSwitch}/>
+          </View>
+          ) : <></>}
     </TouchableOpacity>
 		);
-	}
+	// }
 }
 
 const styles = StyleSheet.create({
@@ -38,9 +40,9 @@ const styles = StyleSheet.create({
         padding: 10,
       },  
       logo: {
-        marginLeft:0,
-        height: 50,
-        width: 50,
+        margin:4,
+        height: 45,
+        width: 45,
       },
       background: {
         position: 'absolute',
@@ -58,5 +60,15 @@ const styles = StyleSheet.create({
         textAlign: 'left',
         color: 'white'
       },
+      switch: {
+        margin: 10,
+        marginTop: 15 ,
+        marginLeft: 100,
+        transform: [{ scaleX: 1.2 }, { scaleY: 1.2 }]
+      },
+      switchView: {
+        flex: 1,
+        justifyContent: "flex-end",
+      }
     });
 export default ProfileButton;
