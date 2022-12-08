@@ -24,7 +24,8 @@ class Header extends Component {
 				</ContentText>
 				<LinearGradient
 				// Background Linear Gradient
-				colors={['transparent','lightgrey']}
+				start = {{x:0.5, y: 0.55}} 
+				colors={['transparent','#D9DAD9']}
 				style={this.props.headingStyleL}
 			  />
 			</View>

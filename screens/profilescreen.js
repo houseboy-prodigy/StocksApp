@@ -7,6 +7,7 @@ import help from '../assets/help.png'
 import notif from '../assets/bell.png'
 import logout from '../assets/logout.png'
 import ProfileButton from '../components/ProfileButton';
+import Container from '../components/Container'
 
 
 class ProfileScreen extends Component {
@@ -23,7 +24,7 @@ class ProfileScreen extends Component {
 
 	render = () => {
 		return (
-				<View style={styles.container}>
+				<Container style={styles.container}>
 					<Header headingStyle={styles.heading} headingStyleL={styles.background} title="Profile"/>
 					<ProfileButton name = "Notifications" hasSwitch={true} image={notif}/>
 					<ProfileButton name = "Settings" image={settings}/>
@@ -34,7 +35,7 @@ class ProfileScreen extends Component {
 							Log Out
 						</Text>
 					</TouchableOpacity>
-				</View>
+				</Container>
 		);
 	}
 }

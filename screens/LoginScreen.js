@@ -1,12 +1,13 @@
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View,Button,TextInput } from 'react-native';
 import 'react-native-gesture-handler';
 import * as firebase from 'firebase/app';
 // import { firebase } from '../firebase/config'
 import auth from '@react-native-firebase/auth';
-import {Button, Content, Header, Form, Input, Item, Label, Container} from 'native-base';
-import Headers from '../components/Header'
-
+import {Content, Form, Input, Item, Label} from 'native-base';
+import Header from '../components/Header'
+import Container from '../components/Container'
+import HeaderWithSub from '../components/HeaderWithPL2'
 
 
 class LoginScreen extends React.Component {
@@ -94,47 +95,41 @@ class LoginScreen extends React.Component {
     render() {
       return (  
       <Container style={styles.container}>
-      <Headers headingStyle={styles.heading} headingStyleL={styles.background} title="MRKT"/>
-        
-          <Form>
-            <Item floatingLabel>
-              <Label style={ {color: 'white'} }>E-Mail</Label>
-              <Input
-                style={ {color: 'white'} }
-                autoCorrect={false}
-                autoCapitalize="none"
-                onChangeText={(email) => this.setState({email})}
-              />
-            </Item>
-            <Item floatingLabel>
-              <Label style={ {color: 'white'} }>Password</Label>
-              <Input
-                style={ {color: 'white'} }
-                autoCorrect={false}
-                autoCapitalize="none"
-                secureTextEntry={true}
-                onChangeText={(password) => this.setState({password})}
-              />
-            </Item>
-            <Button style={{ marginTop: 10 }}
-            full rounded success 
-            onPress ={()=> this.loginUser(this.state.email, this.state.password)}
-            >
-              <Text style = {{ color: 'white' }}>Log-In</Text>
-            </Button>
-            <Button style = {{marginTop: 10}}
-            full rounded primary 
-            onPress = {()=> this.signUpUser(this.state.email, this.state.password)}
-            >
-              <Text style={{color: 'white'}}>Sign-Up</Text>
-            </Button>
-            <Button style = {{marginTop: 10}}
-            full rounded danger onPress = {()=> this.forgotPassword(this.state.email)} >
-              <Text style={{color: 'white'}}>
-                Forgot Password
-              </Text>
-            </Button>
-          </Form>
+      <HeaderWithSub headingStyle={styles.heading} start = {{x:0.5, y: 0.55}} colors={['transparent','#D9DAD9']} headingStyleL={styles.background} title="MRKT" loss={'Stock tracking made easy'}/>
+      <TextInput
+      style={styles.inputbox}
+        placeholder="Email"
+        placeholderTextColor='white'
+        underlineColorAndroid="transparent"
+        autoCapitalize="none"
+        onChangeText={(email) => this.setState({email})}
+      />
+      <TextInput
+      style={styles.inputbox}
+        placeholder="Password"
+        placeholderTextColor='white'
+        underlineColorAndroid="transparent"
+        autoCapitalize="none"
+        onChangeText={(password) => this.setState({password})}
+      />
+          <Button
+          title="Login"
+          onPress ={()=> this.loginUser(this.state.email, this.state.password)}
+          //Button Title
+  
+        />
+        <Button
+        title="Signup"
+        color="#1D519C"
+        //Button Title
+        onPress = {()=> this.signUpUser(this.state.email, this.state.password)}
+      />
+      <Button
+      title="Forgot Password"
+      color="red"
+      //Button Title
+      onPress = {()=> this.forgotPassword(this.state.email)} 
+    />
         </Container>
         );
     }
@@ -145,9 +140,8 @@ const styles = StyleSheet.create({
     //Beneath here are the styles for the home page (aka login)
     container: {
       flex: 1,
-      backgroundColor: '#000000',
-      justifyContent: 'center',
-      padding: 10
+      justifyContent: 'flex-start',
+      backgroundColor: 'lightgrey',
     },
     heading: {
       //flex: 0,
@@ -167,7 +161,16 @@ const styles = StyleSheet.create({
       color: 'white',
       fontSize: 40,
       justifyContent: 'center',
-    }
+    },
+    inputbox:{
+      padding: 15,
+      backgroundColor: 'black',
+      color: 'white',
+      fontSize: 15, 
+      borderBottomColor: '#7B7B7B', 
+      borderColor: 'black',
+      borderWidth: 2
+    },
   
   })
 

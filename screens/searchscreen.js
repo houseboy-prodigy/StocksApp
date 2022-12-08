@@ -18,6 +18,8 @@ import * as All  from '../assets/'
 import database from '@react-native-firebase/database';
 import favoritesImage from '../assets/fav.png'
 import favoritesImage2 from '../assets/redfav.png'
+import HeaderWithSub from '../components/HeaderWithPL2'
+
 // container for screen content and components
 
 class SearchScreen extends Component {

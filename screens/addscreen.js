@@ -5,6 +5,7 @@ import NavBar from '../components/NavBar'
 import StockBox from '../components/StockBox'
 import TextInputBox from '../components/TextInputBox'
 import database from '@react-native-firebase/database';
+import HeaderWithSub from '../components/HeaderWithPL2'
 
 import Container from '../components/Container'
 
@@ -74,8 +75,8 @@ render() {
 
         return(
             <Container>
-            <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Add"/>
-      <TextInput style={styles.inputbox}
+            <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Add"/>            
+            <TextInput style={styles.inputbox}
         placeholder="Name of the Stock"
         placeholderTextColor='white'
           value={searchInput}

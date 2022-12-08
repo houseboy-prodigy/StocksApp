@@ -7,6 +7,8 @@ import googleImage from '../assets/google.png'
 import StockBox from '../components/StockBox'
 import getPriceFromApi from '../components/ApiCall'
 import Header from '../components/Header'
+
+
 // import styles from '../Styles/styles'
 import {Form, Input, Item, Label} from 'native-base';
 import { value } from 'deprecated-react-native-prop-types/DeprecatedTextInputPropTypes';
