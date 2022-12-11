@@ -26,26 +26,26 @@ import * as shape from 'd3-shape';
 
 export default InteractiveChart;
 
-function InteractiveChart() {
+function InteractiveChart(props) {
     const apx = (size = 0) => {
         let width = Dimensions.get('window').width;
         return ((width) / 750) * size;
     };
-
+    console.log(props.dates)
+    console.log(`here in charts: ${props.arr}`)
     const [dateList, setDateList] = useState([
-        '08-31 15:09',
-        '08-31 15:10',
-        '08-31 15:11',
-        '08-31 15:12',
-        '08-31 15:13',
-        '08-31 15:14',
+        props.dates[0],
+        props.dates[1],
+        props.dates[2],
+        props.dates[3],
+        props.dates[4],
     ]);
     const [priceList, setPriceList] = useState([
-        47022.9649875,
-        47035.6349875,
-        47040.3149875,
-        47055.6449875,
-        47099.9949875,
+        props.arr[0],
+        props.arr[1],
+        props.arr[2],
+        props.arr[3],
+        props.arr[4],
     ]);
     const size = useRef(dateList.length);
 
@@ -134,7 +134,7 @@ function InteractiveChart() {
         <Path
             key="line"
             d={line}
-            stroke="#FEBE18"
+            stroke="white"
             strokeWidth={apx(6)}
             fill="none"
         />
@@ -146,8 +146,8 @@ function InteractiveChart() {
                 {/* <Stop offset="0%" stopColor="rgb(134, 65, 244)" /> */}
                 {/* <Stop offset="100%" stopColor="rgb(66, 194, 244)" /> */}
 
-                <Stop offset="0%" stopColor="#FEBE18" stopOpacity={0.25} />
-                <Stop offset="100%" stopColor="#FEBE18" stopOpacity={0} />
+                <Stop offset="0%" stopColor="#dc4034" stopOpacity={0.25} />
+                <Stop offset="100%" stopColor="#dc4034" stopOpacity={0} />
             </LinearGradient>
         </Defs>
     );
@@ -216,10 +216,10 @@ function InteractiveChart() {
                 backgroundColor: '#fff',
                 alignItems: 'stretch',
             }}>
-            <Header headingStyle={styles.heading} headingStyleL={styles.background} title="Charts"/>
             <View
                 style={{
                     flexDirection: 'row',
+                    marginLeft: 20,
                     width: apx(750),
                     height: apx(570),
                     alignSelf: 'stretch',

@@ -26,6 +26,7 @@ import searchImage from './assets/Search_Icon.png'
 import HomeScreen from './screens/homescreen'
 import FavoritesScreen from './screens/favoritesscreen'
 import SearchScreen from './screens/searchscreen'
+import TestScreen from './screens/TestScreen'
 // import profileScreen from './screens/profilescreen'
 import { firebaseConfig } from './firebase-key/config'
 //  import { firebase } from './firebase/config'
@@ -241,7 +242,7 @@ class MyTabs extends React.Component {
             />
             <Tab.Screen
             name="Search"
-            component={ChartScreen}
+            component={TestScreen}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
