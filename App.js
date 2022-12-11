@@ -36,6 +36,7 @@ import AddScreen from './screens/addscreen'
 import ReadSuccessScreen from './screens/readSuccess'
 import data from './Local-data/local.json'
 import ProfileScreen from './screens/profilescreen';
+import ChartScreen from './screens/ChartScreen';
 const Stack = createNativeStackNavigator();
 // container for screen content and components
 /*Home screen Code*/
@@ -240,7 +241,7 @@ class MyTabs extends React.Component {
             />
             <Tab.Screen
             name="Search"
-            component={SearchScreen}
+            component={ChartScreen}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
@@ -422,13 +423,7 @@ class App extends Component {
 	render = () => {
 		return (
       <NavigationContainer> 
-        {
-          this.state.loggingStatus ? (
-            <MyTabs onStatusChange={this.changeLoggingState}/>
-        ) : (
-          <LoginScreen onStatusChange={this.changeLoggingState}/>
-            )
-        }
+      <MyTabs/>
 			</NavigationContainer>
     );
    }
