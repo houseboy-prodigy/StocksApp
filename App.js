@@ -242,7 +242,7 @@ class MyTabs extends React.Component {
             />
             <Tab.Screen
             name="Search"
-            component={TestScreen}
+            component={SearchScreen}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
@@ -361,7 +361,7 @@ class Mytabslogin extends React.Component {
             />
             <Tab.Screen
             name="Search"
-            component={SearchScreen}
+            component={TestScreen}
             options={{
               tabBarIcon: ({ focused }) => {
                 return (
@@ -424,7 +424,17 @@ class App extends Component {
 	render = () => {
 		return (
       <NavigationContainer> 
-      <MyTabs/>
+      <Stack.Navigator initialRouteName="Tabs">
+      <Stack.Screen 
+      name="Tabs" 
+      component={MyTabs}/>
+      <Stack.Screen 
+        name="Search" 
+        component={SearchScreen} />
+      <Stack.Screen 
+      name="Chart" 
+      component={TestScreen} />
+      </Stack.Navigator>
 			</NavigationContainer>
     );
    }

@@ -86,6 +86,7 @@ queryStock = (name) => {
       <Text style={styles.para}>
         {props.price}
       </Text>
+      
       <TouchableOpacity onPress={FavoriteActions}>
       {notaddedyet && <Image style={styles.logo} source={favoritesImage} />}
       {!notaddedyet && <Image style={styles.logo} source={favoritesImage2} />}

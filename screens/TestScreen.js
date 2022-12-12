@@ -1,9 +1,12 @@
 import Container from '../components/Container'
 import Header from '../components/Header'
 import {Text, View, TextInput,StyleSheet} from 'react-native'
-import {useEffect, useState} from 'react'
+import {useEffect, useState, setState} from 'react'
 import ChartScreen from './ChartScreen';
-const TestScreen = () => {
+const TestScreen = ({route}) => {
+
+    const { name } = route.params;
+    console.log(`here in test: ${name}`)
     const getDateString = (date) => {
         var dd = String(date.getDate()).padStart(2, '0');
         var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
@@ -25,19 +28,8 @@ const TestScreen = () => {
         prevDate.setDate(prevDate.getDate() - 1);
         prevDate4 = getDateString(prevDate)
         prevDate.setDate(prevDate.getDate() - 1);
-        prevDate5 = getDateString(prevDate)
-        //prevDate.setDate(prevDate.getDate() - 1);
-        /*
-        prevDate2 = currDate.setDate(currDate.getDate() - 2)
-        prevDate3 = currDate.getDate() - 3
-        prevDate4 = currDate.getDate() - 4
-        prevDate1 = getDateString(prevDate1)
-        prevDate2 = getDateString(prevDate2)
-        prevDate3 = getDateString(prevDate3)
-        prevDate4 = getDateString(prevDate4)
-        */
-        
-        datesArr.push(prevDate1,prevDate2,prevDate3,prevDate4,prevDate5)
+        prevDate5 = getDateString(prevDate)        
+        datesArr.push(prevDate5,prevDate4,prevDate3,prevDate2,prevDate1)
         return datesArr
     }
     var today = new Date();
@@ -62,11 +54,43 @@ const TestScreen = () => {
     const [stockPrice,setStockPrices] = useState([])
     const [dates,setDates] = useState(gottenDate)
     const [error,setError] = useState()
+
+    useEffect(() => {
+        searchStock = async () => {
+          const url = `https://api.polygon.io/v2/aggs/ticker/${name}/range/1/day/${prevDate}/${today}?adjusted=true&sort=asc&limit=120&apiKey=g14DIhw20yIUFfTGwdYPz0UGT8SIwODp`;
+      
+          try {
+            const response = await fetch(url);
+            const responseJson = await response.json();
+            console.log(stockPrice.length)
+            SetSearchResult({
+              price1: responseJson.results[0].o,
+              price2: responseJson.results[1].o,
+              price3: responseJson.results[2].o,
+              price4: responseJson.results[3].o,
+              price5: responseJson.results[4].o,
+              name: responseJson.ticker,
+            });
+            const stockPricesArr = []
+            stockPricesArr.push(searchResult.price1, searchResult.price2, searchResult.price3, searchResult.price4, searchResult.price5)
+            setStockPrices(stockPricesArr)
+            console.log(stockPrice)
+            console.log(dates)
+          } catch (error) {
+            setError(error);
+          }
+        }
+        searchStock();
+        console.log(searchResult)
+
+      }, []);
+
+    /*
     searchStock = async () => {
-        const stockPricesArr = []
+        
         
         const url = `https://api.polygon.io/v2/aggs/ticker/${searchInput}/range/1/day/${prevDate}/${today}?adjusted=true&sort=asc&limit=120&apiKey=g14DIhw20yIUFfTGwdYPz0UGT8SIwODp`;
-        console.log(stockPrice)
+        //console.log(stockPrice)
         await fetch(url)
           .then(res => res.json())
           .then(responseJson =>
@@ -79,27 +103,39 @@ const TestScreen = () => {
                   price5: responseJson.results[4].o,
                   name: responseJson.ticker
                 })
-          ).then(stockPricesArr.push(searchResult.price1,searchResult.price2,searchResult.price3,searchResult.price4,searchResult.price5)
-          ).then(setStockPrices(stockPricesArr))
+          )
           .catch(error => setError(error));
       };
-    
+    */
+    const ArraySet = () => {
+        const stockPricesArr = []
+        stockPricesArr.push(searchResult.price1,searchResult.price2,searchResult.price3,searchResult.price4,searchResult.price5)
+        (setStockPrices(stockPricesArr))
+    }
+    const doBoth = () => {
+        searchStock();
+        ArraySet();
+    }
+    if(stockPrice.length == 0){
+        console.log('here11')
     return(
         <Container>
-        <Header headingStyle={styles.heading} start = {{x:0.7, y: 0.4}} colors={['transparent','#C30202']} headingStyleL={styles.background} title="Test"/>
-        <TextInput
-        style={styles.inputbox}
-          placeholder="Find Your Stock.."
-          placeholderTextColor='white'
-          underlineColorAndroid="transparent"
-          autoCapitalize="none"
-          onChangeText={(text) => {SetSearchInput(text)}}
-          onSubmitEditing={searchStock}
-          value={searchInput}
-        />
-        <ChartScreen arr={stockPrice} dates={dates}/>
+        <Header headingStyle={styles.heading} start = {{x:0.7, y: 0.4}} colors={['transparent','#C30202']} headingStyleL={styles.background} title="Chart"/>
+       
         </Container>
     )
+    }
+    else{
+        console.log('her2')
+        return(
+            <Container>
+            <Header headingStyle={styles.heading} start = {{x:0.7, y: 0.4}} colors={['transparent','#C30202']} headingStyleL={styles.background} title="Chart"/>
+            <ChartScreen arr={stockPrice} dates={dates}/>
+            </Container>
+        )
+    }
+    
+
 }
 
 const styles = StyleSheet.create({

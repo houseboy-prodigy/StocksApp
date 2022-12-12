@@ -31,22 +31,8 @@ function InteractiveChart(props) {
         let width = Dimensions.get('window').width;
         return ((width) / 750) * size;
     };
-    console.log(props.dates)
-    console.log(`here in charts: ${props.arr}`)
-    const [dateList, setDateList] = useState([
-        props.dates[0],
-        props.dates[1],
-        props.dates[2],
-        props.dates[3],
-        props.dates[4],
-    ]);
-    const [priceList, setPriceList] = useState([
-        props.arr[0],
-        props.arr[1],
-        props.arr[2],
-        props.arr[3],
-        props.arr[4],
-    ]);
+    const dateList = props.dates
+    const priceList = props.arr
     const size = useRef(dateList.length);
 
     const [positionX, setPositionX] = useState(-1);// The currently selected X coordinate position

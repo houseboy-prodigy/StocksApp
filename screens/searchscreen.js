@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Button, StyleSheet, Text, View, Image,TouchableOpacity, TextInput, ScrollView, Alert} from 'react-native';
 import Header from '../components/Header'
+import { useNavigation } from '@react-navigation/native';
 import NavBar from '../components/NavBar'
 import appleImage from '../assets/apple.png'
 import googleImage from '../assets/google.png'
@@ -11,7 +12,6 @@ import userImage from '../assets/user.png'
 import addImage from '../assets/add.png'
 import favoriteImage from '../assets/favorites.png'
 import marketImage from '../assets/chart.png'
-import { useNavigation } from '@react-navigation/native';
 import Container from '../components/Container'
 import StockBoxFav from '../components/StockBoxWithFav'
 import * as All  from '../assets/'
@@ -19,11 +19,12 @@ import database from '@react-native-firebase/database';
 import favoritesImage from '../assets/fav.png'
 import favoritesImage2 from '../assets/redfav.png'
 import HeaderWithSub from '../components/HeaderWithPL2'
+import ChartScreen from '../screens/ChartScreen'
 
 // container for screen content and components
 
 class SearchScreen extends Component {
-    
+
     constructor() {
       super();
       this.ApiKey = "g14DIhw20yIUFfTGwdYPz0UGT8SIwODp"
@@ -33,15 +34,15 @@ class SearchScreen extends Component {
         searchResultName: null,
         error: "",
         isLoading: false,
-        isFound: false
+        isFound: false,
+        ChartArr: []
       };
     }
-  
     searchStock = async () => {
       this.setState({
         isLoading: true
       });
-      const url = `https://api.polygon.io/v2/aggs/ticker/${this.state.searchInput}/range/1/day/2021-07-22/2021-07-22?adjusted=true&sort=asc&limit=120&apiKey=${this.ApiKey}`;
+      const url = `https://api.polygon.io/v2/aggs/ticker/${this.state.searchInput}/range/1/day/2021-07-15/2021-07-22?adjusted=true&sort=asc&limit=120&apiKey=${this.ApiKey}`;
       await fetch(url)
         .then(res => res.json())
         .then(responseJson =>
@@ -49,6 +50,10 @@ class SearchScreen extends Component {
             isLoading: true,
             searchResult: {
               price: responseJson.results[0].o,
+              price2: responseJson.results[1].o,
+              price3: responseJson.results[2].o,
+              price4: responseJson.results[3].o,
+              price5: responseJson.results[4].o,
               name: responseJson.ticker
             }
           })
@@ -117,6 +122,7 @@ class SearchScreen extends Component {
         const { searchInput, searchResult, searchResultName, error, isLoading,isFound } = this.state;
         
         if (searchResult && searchResultName) {
+        console.log(this.state.ChartArr)
         return(
               <Container>
                 <View>
@@ -125,13 +131,18 @@ class SearchScreen extends Component {
                 price={searchResult?.price}
                 image={All[`${searchResult.name}`]}
                 />
+
                 <Button
-    onPress={this.searchAgain}
-    title="Search Again"
-    color="#1D519C"
-  
-    accessibilityLabel="Learn more about this purple button"
-  />
+                  onPress={this.searchAgain}
+                  title="Search Again"
+                  />
+                <Button
+                onPress={() => this.props.navigation.navigate('Chart',{name: searchResult.name,})}
+                title="Show Chart"
+                color="#1D519C"
+
+                accessibilityLabel="Learn more about this purple button"
+                />
                 </View>
                 
               </Container>
