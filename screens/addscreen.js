@@ -23,7 +23,7 @@ class AddScreen extends Component {
         };
       }
 
-      writeIDtoDB = (name, cost,quant) => {
+      writeIDtoDB = (name, cost,quant,sprice) => {
         try {
             const path = 'UserPortfolio/' + '' + name
             database()
@@ -31,7 +31,8 @@ class AddScreen extends Component {
                 .set({
                     name: name,
                     cost: cost,
-                    quant: quant
+                    quant: quant,
+                    sprice: sprice
             }).then(() => console.log('Data set.'));
     
         } catch (error) {
@@ -103,7 +104,7 @@ render() {
 
     <Button
         title="Submit"
-        onPress={()=>this.writeIDtoDB(searchInput,costval,quantity)}
+        onPress={()=>this.writeIDtoDB(searchInput,costval,quantity,searchResult.price)}
         //Button Title
 
       />
